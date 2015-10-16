@@ -12,3 +12,8 @@ Text Domain: acats
 This theme is the property Ben Stolovitz, licensed to The Washington University Aristocats. I will add a more permissive license when it actually works.
 
 */
+
+body {
+	max-width: 40rem;
+	margin: 0 auto;
+}

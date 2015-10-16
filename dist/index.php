@@ -1,3 +1,13 @@
 <?php get_header(); ?>
-	HAHAHA
+	<ul>
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
+			<li>
+				<h2><?php the_title(); ?></h2>
+				<p><?php the_content(); ?></p>
+			</li>
+		<?php endwhile; else : ?>
+			no posts
+	 	<?php endif; ?>
+	</ul>
+
 <?php get_footer(); ?>
