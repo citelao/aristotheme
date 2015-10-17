@@ -46,11 +46,19 @@
 
 	TODO skip to content
 
-	<?php if(is_home()): ?>
-		<h1>The Aristocats</h1>
-	<?php else: ?>
-		<h1><?php single_post_title(); ?></h1>
-	<?php endif; ?>
+	<header>
+		<?php if(is_home()): ?>
+			<h1>The Aristocats</h1>
+		<?php else: ?>
+			<?php // get the header image
+
+			$attachment = get_post_meta(get_queried_object()->ID, 'bs_header_image', true);
+			$img = wp_get_attachment_image_src($attachment, 'full');
+			?>
+			<h1><?php single_post_title(); ?></h1>
+			<img height="100" src="<?php echo $img[0]; ?>">
+		<?php endif; ?>
+	</header>
 
 	<nav class="navigation" id="nav">
 		<button id="nav-toggler" class="navigation__hamburger">Menu</button>

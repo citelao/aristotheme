@@ -1,7 +1,4 @@
 <?php
-// We depend on them, makes our lives easier
-require_once('Custom-Meta-Boxes/custom-meta-boxes.php');
-
 // Add a menu
 function bs_register_menus() {
   register_nav_menu('main-nav', 'Main Navigation');
