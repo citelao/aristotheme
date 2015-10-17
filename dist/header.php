@@ -46,7 +46,11 @@
 
 	TODO skip to content
 
-	<h1>The Aristocats</h1>
+	<?php if(is_home()): ?>
+		<h1>The Aristocats</h1>
+	<?php else: ?>
+		<h1><?php single_post_title(); ?></h1>
+	<?php endif; ?>
 
 	<nav class="navigation" id="nav">
 		<button id="nav-toggler" class="navigation__hamburger">Menu</button>
