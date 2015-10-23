@@ -45,18 +45,22 @@
     <![endif]-->
 
 	TODO skip to content
+	
+	<?php // get the header image
 
-	<header>
+	$attachment = get_post_meta(get_queried_object()->ID, 'bs_header_image', true);
+	$img = wp_get_attachment_image_src($attachment, 'full');
+	$style = '';
+	if($img) {
+		$style = 'background-image: url(' . $img[0] . ')';
+	}
+	?>
+	<header style="<?php echo $style; ?>">
 		<?php if(is_home()): ?>
 			<h1>The Aristocats</h1>
 		<?php else: ?>
-			<?php // get the header image
-
-			$attachment = get_post_meta(get_queried_object()->ID, 'bs_header_image', true);
-			$img = wp_get_attachment_image_src($attachment, 'full');
-			?>
 			<h1><?php single_post_title(); ?></h1>
-			<img height="100" src="<?php echo $img[0]; ?>">
+			<!-- <img height="100" src="<?php echo $src; ?>"> -->
 		<?php endif; ?>
 	</header>
 
