@@ -44,7 +44,7 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-	TODO skip to content
+	<a href="#content" class="skip-to-content">Skip to content</a>
 	
 	<?php // get the header image
 
@@ -54,8 +54,14 @@
 	if($img) {
 		$style = 'background-image: url(' . $img[0] . ')';
 	}
+
+    $class = 'header';
+    if(is_front_page()) {
+        $class .= ' header--jumbo';
+    }
+
 	?>
-	<header style="<?php echo $style; ?>">
+	<header style="<?php echo $style; ?>" class="<?php echo $class; ?>">
 		<?php if(is_home()): ?>
 			<h1>The Aristocats</h1>
 		<?php else: ?>

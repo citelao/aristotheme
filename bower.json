@@ -1,0 +1,23 @@
+{
+  "name": "Acats Theme",
+  "description": "That Acats Theme for That Acats Site",
+  "main": "src/index.php",
+  "authors": [
+    "Ben <ben@stolovitz.com>"
+  ],
+  "license": "Proprietary",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3",
+    "susy": "~2.2.6"
+  }
+}

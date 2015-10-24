@@ -2,6 +2,7 @@
 import gulp from 'gulp';
 import os from 'os';
 
+import importCss from 'gulp-import-css';
 import imageResize from 'gulp-image-resize';
 import imagemin from 'gulp-imagemin';
 import notify from 'gulp-notify';
@@ -23,6 +24,7 @@ gulp.task('css', () => {
   return gulp.src('src/sass/**/*.scss')
     .pipe(notify('Compiling SCSS...'))
     .pipe(sass())
+    .pipe(importCss())
     .pipe(gulp.dest('./dist'))
     .pipe(notify('Compiled SCSS.'));
 });

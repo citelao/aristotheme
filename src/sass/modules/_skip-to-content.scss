@@ -1,0 +1,16 @@
+.skip-to-content {
+	@include screen-reader;
+
+	background: $yellow;
+	color: $text;
+
+	text-align: center;
+	text-decoration: none;
+
+	&:focus {
+		@include span(12);
+		padding: 1rem;
+		height: auto;
+		position: static;
+	}
+}

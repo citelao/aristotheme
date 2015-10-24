@@ -1,0 +1,13 @@
+/* Border box */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Colors */
+body {
+	background: $background;
+	color: $text-subdued;
+}

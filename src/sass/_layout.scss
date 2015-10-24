@@ -1,0 +1,10 @@
+/* grid system! */
+$susy: (
+	columns: 12,
+	container: 1050px,
+	global-box-sizing: border-box
+);
+
+.wrapper {
+	@include container;
+}

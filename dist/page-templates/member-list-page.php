@@ -25,8 +25,16 @@
 	while ( have_posts() ) : the_post();
 	 	// exclude alumni
 		$is_alum = (get_post_meta(get_the_ID(), 'bs_member_status', true) == 1);
-		if($is_alum) { continue; } ?>
-		<li>
+		if($is_alum) { continue; } 
+
+		$attachment = get_post_meta(get_the_ID(), 'bs_member_image', true);
+		$img = wp_get_attachment_image_src($attachment, 'full');
+		$style = "";
+		if($img) {
+			$style = $style = 'background-image: url(' . $img[0] . ')';
+		}
+		?>
+		<li style="<?php echo $style; ?>">
 			<?php the_title(); ?>
 		</li>
 	<?php endwhile; ?>
@@ -38,8 +46,16 @@
 	while ( have_posts() ) : the_post(); ?>
 		<?php // only alumni
 		$is_alum = (get_post_meta(get_the_ID(), 'bs_member_status', true) == 1);
-		if(!$is_alum) { continue; } ?>
-		<li>
+		if(!$is_alum) { continue; } 
+
+		$attachment = get_post_meta(get_the_ID(), 'bs_member_image', true);
+		$img = wp_get_attachment_image_src($attachment, 'full');
+		$style = "";
+		if($img) {
+			$style = $style = 'background-image: url(' . $img[0] . ')';
+		}
+		?>
+		<li style="<?php echo $style; ?>">
 			<?php the_title(); ?>
 		</li>
 	<?php endwhile; ?>

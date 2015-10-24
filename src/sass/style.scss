@@ -13,7 +13,15 @@ This theme is the property Ben Stolovitz, licensed to The Washington University 
 
 */
 
-body {
-	max-width: 40rem;
-	margin: 0 auto;
-}
+// so, SASS imports don't like CSS-- I have to have an extra gulp-import-css task
+// just for this line:
+@import '../../bower_components/normalize-css/normalize.css';
+@import '../../bower_components/susy/sass/susy';
+
+@import 'variables';
+@import 'utilities';
+@import 'base';
+@import 'layout';
+
+@import 'modules/header';
+@import 'modules/skip-to-content';
