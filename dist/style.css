@@ -469,17 +469,31 @@ html {
   box-sizing: inherit;
 }
 
-/* Colors */
-
 body {
   background: black;
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* typography */
+
+html {
+  font: 18px Arial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+  font-family: Georgia;
+}
+
 /* grid system! */
 
 .wrapper {
-  max-width: 1050px;
+  max-width: 1125px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -497,10 +511,43 @@ body {
   margin-right: 0;
   background-image: url("img/header/bg.png");
   background-size: 300px 300px;
+  padding: 5rem 2rem;
+  text-align: center;
 }
 
 .header--jumbo {
-  height: 525px;
+  padding: 150px 2rem;
+}
+
+.header--bleed {
+  position: relative;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: scroll;
+  z-index: -2;
+}
+
+.header--bleed:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.header__title {
+  font-size: 5rem;
+  color: #FAFD4A;
+}
+
+.header__logo {
+  width: 750px;
+  margin: 0 auto;
+  background: black;
 }
 
 .skip-to-content {
@@ -524,4 +571,72 @@ body {
   padding: 1rem;
   height: auto;
   position: static;
+}
+
+.navigation {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: Georgia;
+}
+
+.navigation__hamburger {
+  display: none;
+  /* TODO */
+}
+
+.navigation__list {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.navigation__item {
+  float: left;
+  display: block;
+  color: #FAFD4A;
+  text-decoration: none;
+}
+
+.navigation__item a {
+  display: block;
+  padding: 3rem;
+  color: inherit;
+  text-decoration: inherit;
+  transition: all 0.2s ease-in;
+}
+
+.navigation__item a:hover,
+.navigation__item a:focus {
+  transition: all 0s ease-in;
+}
+
+.navigation__item.current-menu-item a,
+.navigation__item a:focus,
+.navigation__item a:hover {
+  transform: scale(1.2);
+  background: #FAFD4A;
+  color: #333;
+}
+
+.navigation__item a:active {
+  transform: scale(0.8);
+}
+
+.content {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1.69492%;
+  background: #fff;
+  color: #333;
+}
+
+.footer {
+  width: 66.10169%;
+  margin: 0 auto;
+  float: left;
+  text-align: center;
 }

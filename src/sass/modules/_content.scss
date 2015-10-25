@@ -1,0 +1,7 @@
+.content {
+	@include span(12);
+	padding: gutter();
+
+	background: $background-light;
+	color: $text;
+}

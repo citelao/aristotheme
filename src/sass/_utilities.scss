@@ -6,3 +6,11 @@
 	height: 1px;
 	overflow: hidden;
 }
+
+@mixin punchy {
+	transition: all 0.2s ease-in;
+
+	&:hover, &:focus {
+		transition: all 0s ease-in;		
+	}
+}

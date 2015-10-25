@@ -1,0 +1,44 @@
+.navigation {
+	@include span(12);
+	font-family: Georgia;
+}
+
+.navigation__hamburger {
+	display: none;
+	/* TODO */
+}
+
+.navigation__list {
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+.navigation__item {
+	float: left;
+	display: block;
+
+	color: $yellow;
+	text-decoration: none;
+
+	a {
+		display: block;
+		padding: 3rem;
+		color: inherit;
+		text-decoration: inherit;
+
+		@include punchy;
+	}
+
+	&.current-menu-item a,
+	a:focus,
+	a:hover {
+		transform: scale(1.2);
+		background: $yellow;
+		color: $text;
+	}
+
+	a:active {
+		transform: scale(0.8);
+	}
+}

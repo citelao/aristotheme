@@ -2,8 +2,43 @@
 	@include span(12);
 	background-image: url(img/header/bg.png);
     background-size: 300px 300px;
+
+    padding: 5rem 2rem;
+    text-align: center;
 }
 
 	.header--jumbo {
-		height: 525px;
+		padding: 150px 2rem;
+	}
+
+	.header--bleed {
+		position: relative;
+	    background-size: cover;
+	    background-position: center top;
+	    background-attachment: scroll;
+	    z-index: -2;
+
+	    &:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			background: rgba(0,0,0,0.4);
+			z-index: -1;
+		}
+	}
+
+	.header__title {
+		font-size: 5rem;
+		color: $yellow;
+	}
+
+	.header__logo {
+		width: 75px * 10;
+		margin: 0 auto;
+		background: $background;
 	}

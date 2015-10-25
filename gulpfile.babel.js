@@ -11,14 +11,15 @@ import sass from 'gulp-sass';
 
 gulp.task('default', ['build']);
 
-gulp.task('serve', ['css', 'php', 'img', 'lib'], () => {
+gulp.task('serve', ['css', 'php', 'img', 'svg', 'lib'], () => {
   gulp.watch('src/sass/**/*.scss', ['css']);
   gulp.watch('src/**/*.php', ['php']);
   gulp.watch('src/img/**/*.{jpg,jpeg,png}', ['img']);
+  gulp.watch('src/img/**/*.svg', ['svg']);
   gulp.watch('lib/**/*', ['lib']);
 });
 
-gulp.task('build', ['css', 'php', 'img', 'lib']);
+gulp.task('build', ['css', 'php', 'img', 'svg', 'lib']);
 
 gulp.task('css', () => {
   return gulp.src('src/sass/**/*.scss')
@@ -54,6 +55,13 @@ gulp.task('img', () => {
     })
     .pipe(gulp.dest('dist/img'))
     .pipe(notify('Compiled images.'));
+});
+
+gulp.task('svg', () => {
+  return gulp.src(['src/img/**/*.svg'])
+    .pipe(notify('Compiling vectors...'))
+    .pipe(gulp.dest('dist/img'))
+    .pipe(notify('Compiled vectors.'));
 });
 
 gulp.task('lib', () => {

@@ -51,22 +51,22 @@
 	$attachment = get_post_meta(get_queried_object()->ID, 'bs_header_image', true);
 	$img = wp_get_attachment_image_src($attachment, 'full');
 	$style = '';
+    $class = 'header';
 	if($img) {
 		$style = 'background-image: url(' . $img[0] . ')';
+        $class .= ' header--bleed';
 	}
 
-    $class = 'header';
     if(is_front_page()) {
         $class .= ' header--jumbo';
     }
 
 	?>
 	<header style="<?php echo $style; ?>" class="<?php echo $class; ?>">
-		<?php if(is_home()): ?>
-			<h1>The Aristocats</h1>
+		<?php if(is_front_page()): ?>
+			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/img/header/logo.svg" alt="The Aristocat typographic logo, with the phrase 'The Aristocats a cappella' written out in a style similar to the Disney logo" class="header__logo">
 		<?php else: ?>
-			<h1><?php single_post_title(); ?></h1>
-			<!-- <img height="100" src="<?php echo $src; ?>"> -->
+			<h1 class="header__title"><?php single_post_title(); ?></h1>
 		<?php endif; ?>
 	</header>
 
@@ -78,3 +78,5 @@
 			'theme_location' => 'main-nav'
 		)); ?>
 	</nav>
+
+    <section class="content" id="content">
