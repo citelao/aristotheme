@@ -26,3 +26,15 @@ h6,
 h7 {
 	font-family: Georgia;
 }
+
+a {
+	color: $link-color;
+	text-decoration: none;
+
+	@include subtle;
+
+	&:focus, &:hover {
+		color: $link-hover-color;
+		text-decoration: underline;
+	}
+}

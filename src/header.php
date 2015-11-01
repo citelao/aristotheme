@@ -79,4 +79,4 @@
 		)); ?>
 	</nav>
 
-    <section id="content">
+    <section class="main" id="content">

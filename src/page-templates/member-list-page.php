@@ -4,7 +4,7 @@
  * Description: Page with member portraits after the content.
  */
  get_header(); ?>
-<section class="content content--full">
+<section class="content content--contiguous-bottom">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 		<h2><?php
 			// if we have an alternate title, use that
@@ -15,17 +15,17 @@
 				the_title();
 			}
 		?></h2>
-</section>
-<section class="content">
 		<p><?php the_content(); ?></p>
 	<?php endwhile; else : ?>
 		no posts
  	<?php endif; ?>
 </section>
 <section class="sidebar">
-	<h2>test</h2>
+	<p>listen to us &rarr;</p>
+
+	<p>join us &rarr;</p>
 </section>
-<section class="content">
+<section class="content content--contiguous-top">
 	<h2>Members</h2>
 </section>
 	<ul class="person">

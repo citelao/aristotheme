@@ -13,8 +13,10 @@
 	opacity: 0.5;
 	text-decoration: none;
 
-	&:hover {
+	&:hover, &:focus {
+		color: white;
 		opacity: 1;
+		text-decoration: none;
 	}
 }
 

@@ -1,8 +1,19 @@
 .content {
-	@include span(8);
+	// @include span(8);
+	width: span(8);
+	float: left;
 	padding: 0 gutter();
+	margin: gutter() 0;
 }
 
 	.content--full {
 		@include span(12);
+	}
+
+	.content--contiguous-bottom {
+		margin-bottom: 0;
+	}
+
+	.content--contiguous-top {
+		margin-top: 0;
 	}

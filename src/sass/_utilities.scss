@@ -15,6 +15,14 @@
 	}
 }
 
+@mixin subtle {
+	transition: all 0.1s ease-in;
+
+	&:hover, &:focus {
+		transition: all 0s ease-in;		
+	}
+}
+
 @mixin block-grid($items) {
 	display: block;
 
