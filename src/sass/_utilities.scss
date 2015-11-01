@@ -14,3 +14,23 @@
 		transition: all 0s ease-in;		
 	}
 }
+
+@mixin block-grid($items) {
+	display: block;
+
+	list-style: none;
+	padding: 0;
+	// margin-bottom: 0;
+
+	li, .block-grid__item {
+		display: block;
+		float: left;
+		position: relative;
+
+		margin: 0;
+		padding: 0;
+
+		width: 100%/$items;
+		padding-bottom: 100%/$items;
+	}
+}

@@ -1,7 +1,8 @@
 .content {
-	@include span(12);
-	padding: gutter();
-
-	background: $background-light;
-	color: $text;
+	@include span(8);
+	padding: 0 gutter();
 }
+
+	.content--full {
+		@include span(12);
+	}

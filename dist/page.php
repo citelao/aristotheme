@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<section class="content content--full">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 		<h2><?php
 			// if we have an alternate title, use that
@@ -9,8 +10,11 @@
 				the_title();
 			}
 		?></h2>
-		<p><?php the_content(); ?></p>
+</section>
+<section class="content content">
+		<?php the_content(); ?>
 	<?php endwhile; else : ?>
 		no posts
  	<?php endif; ?>
+</section>
 <?php get_footer(); ?>

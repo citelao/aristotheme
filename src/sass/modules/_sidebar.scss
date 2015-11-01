@@ -1,0 +1,5 @@
+.sidebar {
+	@include span(4 wider);
+	padding: 0 gutter();
+	background: $light-yellow;
+}

@@ -4,6 +4,7 @@
  * Description: Page with member portraits after the content.
  */
  get_header(); ?>
+<section class="content content--full">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 		<h2><?php
 			// if we have an alternate title, use that
@@ -14,13 +15,20 @@
 				the_title();
 			}
 		?></h2>
+</section>
+<section class="content">
 		<p><?php the_content(); ?></p>
 	<?php endwhile; else : ?>
 		no posts
  	<?php endif; ?>
-
+</section>
+<section class="sidebar">
+	<h2>test</h2>
+</section>
+<section class="content">
 	<h2>Members</h2>
-	<ul>
+</section>
+	<ul class="person">
 	<?php query_posts( 'post_type=member' );
 	while ( have_posts() ) : the_post();
 	 	// exclude alumni
@@ -34,14 +42,17 @@
 			$style = $style = 'background-image: url(' . $img[0] . ')';
 		}
 		?>
-		<li style="<?php echo $style; ?>">
-			<?php the_title(); ?>
+		<li style="<?php echo $style; ?>" class="person__item">
+			<div class="person__content">
+				<h3><?php the_title(); ?></h3>
+			</div>
 		</li>
 	<?php endwhile; ?>
 	</ul>
-
+<section class="content">
 	<h2>Alumni</h2>
-	<ul>
+</section>
+	<ul class="person person--small">
 	<?php rewind_posts();
 	while ( have_posts() ) : the_post(); ?>
 		<?php // only alumni
@@ -55,8 +66,10 @@
 			$style = $style = 'background-image: url(' . $img[0] . ')';
 		}
 		?>
-		<li style="<?php echo $style; ?>">
-			<?php the_title(); ?>
+		<li style="<?php echo $style; ?>" class="person__item">
+			<div class="person__content">
+				<h3><?php the_title(); ?></h3>
+			</div>
 		</li>
 	<?php endwhile; ?>
 	</ul>

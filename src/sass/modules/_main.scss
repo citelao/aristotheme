@@ -1,0 +1,6 @@
+.main {
+	@include span(12);
+
+	background: $background-light;
+	color: $text;
+}

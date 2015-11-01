@@ -11,22 +11,40 @@ add_action( 'init', 'bs_register_menus' );
 
 function bs_register_posts() {
     register_post_type('member', array(
-            'label' => 'Members',
-            'labels' => array(
-                'name_admin_bar' => 'Member',
-                'add_new_item' => 'Add New Member',
-                'edit_item' => 'Edit Member',
-                'new_item' => 'New Member',
-                'view_item' => 'View Member',
-                'search_items' => 'Search members',
-                'not_found' => 'No members found',
-                'not_found_in_trash' => 'No members found in trash'
-                ),
-            'description' => 'A member or alum of the group',
-            'show_ui' => true,
-            'menu_icon' => 'dashicons-smiley',
-            'supports' => array('thumbnail', 'title')
-        ));
+        'label' => 'Members',
+        'labels' => array(
+            'name_admin_bar' => 'Member',
+            'add_new_item' => 'Add New Member',
+            'edit_item' => 'Edit Member',
+            'new_item' => 'New Member',
+            'view_item' => 'View Member',
+            'search_items' => 'Search members',
+            'not_found' => 'No members found',
+            'not_found_in_trash' => 'No members found in trash'
+            ),
+        'description' => 'A member or alum of the group',
+        'show_ui' => true,
+        'menu_icon' => 'dashicons-smiley',
+        'supports' => array('thumbnail', 'title')
+    ));
+
+    register_post_type('song', array(
+        'label' => 'Songs',
+        'labels' => array(
+            'name_admin_bar' => 'Song',
+            'add_new_item' => 'Add New Song',
+            'edit_item' => 'Edit Song',
+            'new_item' => 'New Song',
+            'view_item' => 'View Song',
+            'search_items' => 'Search songs',
+            'not_found' => 'No songs found',
+            'not_found_in_trash' => 'No songs found in trash'
+            ),
+        'description' => 'A song we sing or sang',
+        'show_ui' => true,
+        'menu_icon' => 'dashicons-controls-play',
+        'supports' => array('thumbnail', 'title')
+    ));
 }
 add_action( 'init', 'bs_register_posts' );
 
@@ -96,6 +114,36 @@ function bs_register_meta_boxes($meta_boxes){
                 'id' => 'bs_member_status',
                 'type' => 'checkbox',
                 'desc' => 'Is alum?'
+            )
+        )
+    );
+    $meta_boxes[] = array(
+        'title' => 'Info',
+        'id' => 'bs_info',
+        'pages' => array('song'),
+        'context'  => 'normal',
+        'priority' => 'high',
+        'fields' => array(
+            array(
+                'name' => 'Original',
+                'id' => 'bs_orignal',
+                'type' => 'text',
+                'size' => 60,
+                'desc' => 'The writers of the original song'
+            ),
+            array(
+                'name' => 'Arranger',
+                'id' => 'bs_arranger',
+                'type' => 'text',
+                'size' => 60,
+                'desc' => 'The person who arranged this song'
+            ),
+            array(
+                'name' => 'Soloists',
+                'id' => 'bs_soloist',
+                'type' => 'text',
+                'size' => 60,
+                'desc' => 'The person who will sing this song. Leave blank if there are no soloists.'
             )
         )
     );

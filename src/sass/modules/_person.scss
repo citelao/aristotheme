@@ -1,0 +1,26 @@
+.person {
+	@include block-grid(3);
+	@include span(12);
+	// margin-left: - gutter() - 0.1%;
+	margin-top: 0;
+}
+
+	.person--small {
+		@include block-grid(6);
+	}
+
+.person__item {
+	background-size: cover;
+	background-image: url(img/members/generic.jpg);
+}
+
+.person__content {
+	position: absolute;
+	text-align: center;
+
+	width: 100%;
+	bottom: 10%;
+
+	background: $background-transparent;
+	color: $text-white;
+}

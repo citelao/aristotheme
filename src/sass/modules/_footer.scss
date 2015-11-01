@@ -1,7 +1,23 @@
 .footer {
-	width: span(8);
-	margin: 0 auto;
-	float: left;
+	@include span(8);
+	@include push(2);
+	
+	display: block;
+	position: relative;
 	
 	text-align: center;
+}
+
+.footer__link {
+	color: white;
+	opacity: 0.5;
+	text-decoration: none;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.footer__image {
+	vertical-align: middle;
 }
