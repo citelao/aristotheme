@@ -1,0 +1,25 @@
+.spotlight {
+	@include span(12);
+	margin: 0 0 1rem 0;
+
+	text-align: center;
+	text-decoration: inherit;
+	color: $text-yellow;
+
+	background-size: cover;
+	background-position: center center;
+
+	&:hover {
+		text-decoration: inherit;
+		color: $text-white;
+	}
+}
+
+	.spotlight__content {
+		width: span(6);
+		margin: 15rem auto 0;
+		padding: 2rem;
+
+		background: black;
+		// @include punchy;
+	}

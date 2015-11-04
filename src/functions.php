@@ -6,9 +6,11 @@ add_theme_support('automatic-feed-links');
 // Add a menu
 function bs_register_menus() {
   register_nav_menu('main-nav', 'Main Navigation');
+  register_nav_menu('home-nav', 'Home Navigation');
 }
 add_action( 'init', 'bs_register_menus' );
 
+// Make members and song types
 function bs_register_posts() {
     register_post_type('member', array(
         'label' => 'Members',
@@ -48,6 +50,19 @@ function bs_register_posts() {
 }
 add_action( 'init', 'bs_register_posts' );
 
+// // Make a taxonomy
+// function bs_register_taxonomies() {
+//     register_taxonomy('collection',
+//         array('post', 'page'),
+//         array(
+//             'label' => 'Collections',
+//             'show_ui' => true,
+//             'description' => 'A nice way of grouping things, independent of post type.'
+//             )
+//         );
+// }
+// add_action( 'init', 'bs_register_taxonomies' );
+
 // Add some BEM classes to the nav
 function bs_add_new_classes($classes, $item){
     $classes[] = 'navigation__item';
@@ -85,7 +100,27 @@ function bs_register_meta_boxes($meta_boxes){
                 'id' => 'bs_alt_title',
                 'type' => 'text',
                 'size' => 60,
-                'desc' => 'An alternate title to display when the page is read.'
+                'desc' => 'An alternate title to display when the page is viewed.'
+            ),
+            array(
+                'name' => 'Featured Image',
+                'id' => 'bs_featured_image',
+                'type' => 'image_advanced',
+                'desc' => 'Which image to use as background when featured on homepage.'
+            ),
+            array(
+                'name' => 'Featured title',
+                'id' => 'bs_featured_title',
+                'type' => 'text',
+                'size' => 60,
+                'desc' => 'An alternate title to display if this is featured on the homepage.'
+            ),
+            array(
+                'name' => 'Featured summary',
+                'id' => 'bs_featured_summary',
+                'type' => 'wysiwyg',
+                'size' => 60,
+                'desc' => 'The blurb to display if this is featured on the homepage.'
             )
         )
     );
