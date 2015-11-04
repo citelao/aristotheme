@@ -1,6 +1,6 @@
 .spotlight {
 	@include span(12);
-	margin: 0 0 1rem 0;
+	margin: 0 0 gutter() 0;
 
 	text-align: center;
 	text-decoration: inherit;
@@ -9,9 +9,18 @@
 	background-size: cover;
 	background-position: center center;
 
-	&:hover {
+	.spotlight__button {
+		@include punchy;
+	}
+
+	&:hover, &:focus {
 		text-decoration: inherit;
 		color: $text-white;
+
+		.spotlight__button {
+			transform: scale(1.1);
+			transition-duration: 0s;
+		}
 	}
 }
 
@@ -21,5 +30,10 @@
 		padding: 2rem;
 
 		background: black;
-		// @include punchy;
+	}
+
+	.spotlight--subtle {
+		&:hover, &:focus {
+			color: $text-yellow;
+		}
 	}

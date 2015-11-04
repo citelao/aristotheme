@@ -1,0 +1,20 @@
+.button {
+	background: $background;
+	padding: 1rem;
+
+	border: 0;
+
+	@include punchy;
+
+	&:hover {
+		background: $yellow;
+		color: $text;
+
+		transform: scale(1.1);
+	}
+}
+
+	.button--contrast {
+		background: $yellow;
+		color: $text;
+	}

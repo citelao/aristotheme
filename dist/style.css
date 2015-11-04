@@ -510,7 +510,7 @@ a:hover {
 /* grid system! */
 
 .wrapper {
-  max-width: 1125px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -681,6 +681,29 @@ a:hover {
   margin: 1.69492% 0;
 }
 
+.button {
+  background: black;
+  padding: 1rem;
+  border: 0;
+  transition: all 0.2s ease-in;
+}
+
+.button:hover,
+.button:focus {
+  transition: all 0s ease-in;
+}
+
+.button:hover {
+  background: #FAFD4A;
+  color: #333;
+  transform: scale(1.1);
+}
+
+.button--contrast {
+  background: #FAFD4A;
+  color: #333;
+}
+
 .person {
   display: block;
   list-style: none;
@@ -739,7 +762,7 @@ a:hover {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.69492% 0;
   text-align: center;
   text-decoration: inherit;
   color: #FAFD4A;
@@ -747,9 +770,25 @@ a:hover {
   background-position: center center;
 }
 
-.spotlight:hover {
+.spotlight .spotlight__button {
+  transition: all 0.2s ease-in;
+}
+
+.spotlight .spotlight__button:hover,
+.spotlight .spotlight__button:focus {
+  transition: all 0s ease-in;
+}
+
+.spotlight:hover,
+.spotlight:focus {
   text-decoration: inherit;
   color: white;
+}
+
+.spotlight:hover .spotlight__button,
+.spotlight:focus .spotlight__button {
+  transform: scale(1.1);
+  transition-duration: 0s;
 }
 
 .spotlight__content {
@@ -757,6 +796,11 @@ a:hover {
   margin: 15rem auto 0;
   padding: 2rem;
   background: black;
+}
+
+.spotlight--subtle:hover,
+.spotlight--subtle:focus {
+  color: #FAFD4A;
 }
 
 .footer {
