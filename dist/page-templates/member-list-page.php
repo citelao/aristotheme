@@ -27,7 +27,18 @@
 	<h2>Members</h2>
 </section>
 	<ul class="person">
-	<?php query_posts( 'post_type=member' );
+	<?php query_posts(array(
+			'post_type' => 'member',
+			'meta_key' => 'bs_member_role',
+			// 'meta_query' => array(
+			// 	array(
+			// 		'key' => 'bs_member_role',
+			// 		'compare' => 'EXISTS',
+			// 		'type' => 'CHAR'
+			// 	)
+			// ),
+			'orderby' => array('meta_value' => 'ASC', 'title' => 'ASC')
+		));
 	while ( have_posts() ) : the_post();
 	 	// exclude alumni
 		$is_alum = (get_post_meta(get_the_ID(), 'bs_member_status', true) == 1);
@@ -42,7 +53,7 @@
 
 		$role = get_post_meta(get_the_ID(), 'bs_member_role', true);
 		$role_block = '';
-		if($role) {
+		if($role != 'none') {
 			$role_block = '<h4 class="person__role">' . $role . '</h4>';
 		}
 

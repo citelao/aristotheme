@@ -24,7 +24,9 @@ gulp.task('build', ['css', 'php', 'img', 'svg', 'lib']);
 gulp.task('css', () => {
   return gulp.src('src/sass/**/*.scss')
     .pipe(notify('Compiling SCSS...'))
-    .pipe(sass())
+    .pipe(sass({
+      'precision': 9
+    }))
     .pipe(importCss())
     .pipe(gulp.dest('./dist'))
     .pipe(notify('Compiled SCSS.'));

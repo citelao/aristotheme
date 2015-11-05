@@ -133,6 +133,14 @@ function bs_register_meta_boxes($meta_boxes){
         'priority' => 'high',
         'fields' => array(
             array(
+                'name' => 'Last Name',
+                'id' => 'bs_member_lastname',
+                'type' => 'text',
+                'size' => 60,
+                'std' => '',
+                'desc' => 'Member\'s last name (for sorting)'
+            ),
+            array(
                 'name' => 'Image',
                 'id' => 'bs_member_image',
                 'type' => 'image_advanced',
@@ -143,7 +151,8 @@ function bs_register_meta_boxes($meta_boxes){
                 'id' => 'bs_member_role',
                 'type' => 'text',
                 'size' => 60,
-                'desc' => '(optional) The role this member has (music director, etc)'
+                'std' => 'none',
+                'desc' => '(optional) The role this member has (music director, etc); no role: `none`'
             ),
             array(
                 'name' => 'Status',
