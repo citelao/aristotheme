@@ -4,6 +4,15 @@
 	float: left;
 	padding: 0 gutter();
 	margin: gutter() 0;
+
+	a {
+		// @include linkUnderlines($background-light, $text);
+
+		&:hover {
+			// @include linkUnderlines($background-light, $link-hover-color);
+			text-decoration: none;
+		}
+	}
 }
 
 	.content--full {

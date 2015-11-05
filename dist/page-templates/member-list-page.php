@@ -20,11 +20,9 @@
 		no posts
  	<?php endif; ?>
 </section>
-<section class="sidebar">
-	<p>listen to us &rarr;</p>
-
-	<p>join us &rarr;</p>
-</section>
+<ul class="sidebar">
+	<?php dynamic_sidebar('bs-sidebar'); ?>
+</ul>
 <section class="content content--contiguous-top">
 	<h2>Members</h2>
 </section>

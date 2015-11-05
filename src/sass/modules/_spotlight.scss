@@ -6,12 +6,9 @@
 	text-decoration: inherit;
 	color: $text-yellow;
 
+	background-image: url(img/header/bg.png);
 	background-size: cover;
 	background-position: center center;
-
-	.spotlight__button {
-		@include punchy;
-	}
 
 	&:hover, &:focus {
 		text-decoration: inherit;
@@ -30,6 +27,11 @@
 		padding: 2rem;
 
 		background: black;
+	}
+
+	.spotlight__button {
+		@include punchy;
+		display: inline-block;
 	}
 
 	.spotlight--subtle {

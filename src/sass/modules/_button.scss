@@ -1,6 +1,10 @@
 .button {
+	display: inline-block;
+
 	background: $background;
 	padding: 1rem;
+	color: $yellow;
+	cursor: pointer;
 
 	border: 0;
 
@@ -9,6 +13,7 @@
 	&:hover {
 		background: $yellow;
 		color: $text;
+		text-decoration: none;
 
 		transform: scale(1.1);
 	}
@@ -17,4 +22,8 @@
 	.button--contrast {
 		background: $yellow;
 		color: $text;
+	}
+
+	.button--block {
+		display: block;
 	}

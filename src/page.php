@@ -15,5 +15,7 @@
 		no posts
  	<?php endif; ?>
 </section>
-<section class="sidebar"><h2>here is title</h2><p>here content be</p></section>
+<ul class="sidebar">
+	<?php dynamic_sidebar('bs-sidebar'); ?>
+</ul>
 <?php get_footer(); ?>

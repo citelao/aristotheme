@@ -5,6 +5,12 @@
 	$menu = wp_get_nav_menu_object($locations['home-nav']);
 	$items = wp_get_nav_menu_items($menu->term_id);
 
+	if(!$items): ?>
+		<h1>So...</h1>
+		<h2>Apparently <em>someone</em> didn't add the navigation menus correctly.</h2>
+		<p>I'm gonna go get Janet. JANET! FIX IT!</p>
+	<?php endif;
+
 	foreach ($items as $key => $post): 
 
 		$meta = get_post_custom($post->object_id);

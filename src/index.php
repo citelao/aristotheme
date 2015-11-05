@@ -9,5 +9,7 @@
 			no posts
 	 	<?php endif; ?>
 	</ul>
-
+	<ul class="sidebar">
+		<?php dynamic_sidebar('bs-sidebar'); ?>
+	</ul>
 <?php get_footer(); ?>

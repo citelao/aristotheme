@@ -1,7 +1,14 @@
 .sidebar {
 	@include span(4 isolate);
-	padding: 0 gutter();
+	padding: 1rem gutter();
 	background: $light-yellow;
 
 	margin: gutter() 0;
+
+	display: block;
+	text-align: center;
 }
+
+	.sidebar__widget {
+		display: block;
+	}

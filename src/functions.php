@@ -8,7 +8,21 @@ function bs_register_menus() {
   register_nav_menu('main-nav', 'Main Navigation');
   register_nav_menu('home-nav', 'Home Navigation');
 }
-add_action( 'init', 'bs_register_menus' );
+add_action('init', 'bs_register_menus');
+
+// Add a sidebar
+add_action('widgets_init', 'bs_register_sidebars');
+function bs_register_sidebars() {
+    register_sidebar(array(
+        'name' => 'Default sidebar',
+        'id' => 'bs-sidebar',
+        'description' => 'The default sidebar, shown on all pages and posts.',
+        'before_widget' => '<li id="%1$s" class="widget sidebar__widget %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>'
+    ));
+}
 
 // Make members and song types
 function bs_register_posts() {
@@ -49,19 +63,6 @@ function bs_register_posts() {
     ));
 }
 add_action( 'init', 'bs_register_posts' );
-
-// // Make a taxonomy
-// function bs_register_taxonomies() {
-//     register_taxonomy('collection',
-//         array('post', 'page'),
-//         array(
-//             'label' => 'Collections',
-//             'show_ui' => true,
-//             'description' => 'A nice way of grouping things, independent of post type.'
-//             )
-//         );
-// }
-// add_action( 'init', 'bs_register_taxonomies' );
 
 // Add some BEM classes to the nav
 function bs_add_new_classes($classes, $item){
