@@ -1,6 +1,6 @@
 .sidebar {
 	@include span(4 isolate);
-	padding: 1rem gutter();
+	padding: 0 gutter();
 	background: $light-yellow;
 
 	margin: gutter() 0;

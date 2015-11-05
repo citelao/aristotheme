@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<ul class="content">
+	<ul>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 			<li>
 				<h2><?php the_title(); ?></h2>

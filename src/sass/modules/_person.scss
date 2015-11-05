@@ -1,6 +1,6 @@
 .person {
 	@include block-grid(3);
-	@include span(12);
+	@include span(12 isolate);
 	// margin-left: - gutter() - 0.1%;
 	margin-top: 0;
 }
@@ -19,8 +19,17 @@
 	text-align: center;
 
 	width: 100%;
-	bottom: 10%;
+	bottom: 5%;
 
 	background: $background-transparent;
 	color: $text-white;
+}
+
+.person__name {
+	// margin-bottom: 0;
+}
+
+.person__role {
+	margin-top: -1rem;
+	font-weight: normal;
 }
