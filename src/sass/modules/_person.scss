@@ -14,6 +14,31 @@
 	background-image: url(img/members/generic.jpg);
 }
 
+	.person__item--link {
+		background-image: url(img/members/you.png);
+
+		@include punchy;
+
+		&:hover, &:focus {
+			transform: scale(1.2);
+		}
+
+		a {
+			color: $text-white;
+
+			&:hover, &:focus {
+				color: $text-white;
+				text-decoration: none;
+			}
+		}
+
+		.person__content {
+			padding-top: 95%;
+			// bottom: 0;
+			background: 0;
+		}
+	}
+
 .person__content {
 	position: absolute;
 	text-align: center;

@@ -65,6 +65,12 @@
 			</div>
 		</li>
 	<?php endwhile; ?>
+		<li class="person__item person__item--link">
+			<a class="person__content" href="/auditions">
+				<h3 class="person__name">You?
+				</h3>
+			</a>
+		</li>
 	</ul>
 <section class="content">
 	<h2>Alumni</h2>

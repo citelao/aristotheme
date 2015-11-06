@@ -65,8 +65,10 @@
 	<header style="<?php echo $style; ?>" class="<?php echo $class; ?>">
 		<?php if(is_front_page()): ?>
 			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/img/header/logo.svg" alt="The Aristocat typographic logo, with the phrase 'The Aristocats a cappella' written out in a style similar to the Disney logo" class="header__logo">
-		<?php else: ?>
+		<?php elseif(is_singular() || is_home()): ?>
 			<h1 class="header__title"><?php single_post_title(); ?></h1>
+        <?php else: ?>
+            <h1 class="header__title">Oops...</h1>
 		<?php endif; ?>
 	</header>
 

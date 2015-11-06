@@ -655,10 +655,7 @@ a:hover {
   float: left;
   padding: 0 1.694915254%;
   margin: 1.694915254% 0;
-}
-
-.content a:hover {
-  text-decoration: none;
+  list-style: none;
 }
 
 .content--full {
@@ -764,6 +761,36 @@ a:hover {
 .person__item {
   background-size: cover;
   background-image: url("img/members/generic.jpg");
+}
+
+.person__item--link {
+  background-image: url("img/members/you.png");
+  transition: all 0.2s ease-in;
+}
+
+.person__item--link:hover,
+.person__item--link:focus {
+  transition: all 0s ease-in;
+}
+
+.person__item--link:hover,
+.person__item--link:focus {
+  transform: scale(1.2);
+}
+
+.person__item--link a {
+  color: white;
+}
+
+.person__item--link a:hover,
+.person__item--link a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+.person__item--link .person__content {
+  padding-top: 95%;
+  background: 0;
 }
 
 .person__content {

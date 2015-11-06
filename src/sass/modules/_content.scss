@@ -5,12 +5,14 @@
 	padding: 0 gutter();
 	margin: gutter() 0;
 
+	list-style: none;
+
 	a {
 		// @include linkUnderlines($background-light, $text);
 
 		&:hover {
 			// @include linkUnderlines($background-light, $link-hover-color);
-			text-decoration: none;
+			// text-decoration: none;
 		}
 	}
 }
