@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php wp_title(''); ?></title>
 
 	<!-- TODO: Make all this dynamic -->
     <meta name="description" content="The Washington University Aristocats wreak havoc and sing Disney music at Washington University in St. Louis. Listen to our music &amp; join us!">
@@ -48,7 +47,7 @@
 	
 	<?php // get the header image
 
-	$attachment = get_post_meta(get_queried_object()->ID, 'bs_header_image', true);
+	$attachment = get_post_thumbnail_id(get_queried_object()->ID);
 	$img = wp_get_attachment_image_src($attachment, 'full');
 	$style = '';
     $class = 'header';

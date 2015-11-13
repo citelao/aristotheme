@@ -4,7 +4,7 @@ License is proprietary because I don't want to take the time to find one.
 
 ## Install
 
-Typically run a `npm install` and a `bower install`. Your Wordpress needs the Meta Box plugin (metabox.io). Just install it in the WP dashboard.
+Typically run a `npm install` and a `bower install`. Your Wordpress needs the Meta Box plugin (metabox.io) and Simple Page Sidebars (wordpress.org/plugins/simple-page-sidebars). Just install them in the WP dashboard.
 
 ## Building
 

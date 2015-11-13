@@ -1,7 +1,13 @@
 <?php
 
+// Images :)
+add_theme_support('post-thumbnails', array('post', 'page')); 
+
 // RSS stuff
 add_theme_support('automatic-feed-links');
+
+// Title
+add_theme_support('title-tag');
 
 // Add a menu
 function bs_register_menus() {
@@ -90,12 +96,12 @@ function bs_register_meta_boxes($meta_boxes){
         'context'  => 'normal',
         'priority' => 'high',
         'fields' => array(
-            array(
-                'name' => 'Header Image',
-                'id' => 'bs_header_image',
-                'type' => 'image_advanced',
-                'desc' => 'Which image to use as the header background.'
-            ),
+            // array(
+            //     'name' => 'Header Image',
+            //     'id' => 'bs_header_image',
+            //     'type' => 'image_advanced',
+            //     'desc' => 'Which image to use as the header background.'
+            // ),
             array(
                 'name' => 'Alternate title',
                 'id' => 'bs_alt_title',
@@ -104,20 +110,20 @@ function bs_register_meta_boxes($meta_boxes){
                 'desc' => 'An alternate title to display when the page is viewed.'
             ),
             array(
-                'name' => 'Featured Image',
+                'name' => 'Homepage Image',
                 'id' => 'bs_featured_image',
                 'type' => 'image_advanced',
-                'desc' => 'Which image to use as background when featured on homepage.'
+                'desc' => 'Which image to use as background when featured on homepage. Note, this is not the "header" image. That\'s on the right: the "featured image."'
             ),
             array(
-                'name' => 'Featured title',
+                'name' => 'Homepage title',
                 'id' => 'bs_featured_title',
                 'type' => 'text',
                 'size' => 60,
                 'desc' => 'An alternate title to display if this is featured on the homepage.'
             ),
             array(
-                'name' => 'Featured summary',
+                'name' => 'Homepage summary',
                 'id' => 'bs_featured_summary',
                 'type' => 'wysiwyg',
                 'size' => 60,
@@ -171,24 +177,40 @@ function bs_register_meta_boxes($meta_boxes){
         'fields' => array(
             array(
                 'name' => 'Original',
-                'id' => 'bs_orignal',
+                'id' => 'bs_original',
                 'type' => 'text',
                 'size' => 60,
-                'desc' => 'The writers of the original song'
+                'desc' => 'The writers of the original song',
+                'clone' => true
             ),
             array(
                 'name' => 'Arranger',
                 'id' => 'bs_arranger',
                 'type' => 'text',
                 'size' => 60,
-                'desc' => 'The person who arranged this song'
+                'desc' => 'The person who arranged this song',
+                'clone' => true
             ),
             array(
                 'name' => 'Soloists',
                 'id' => 'bs_soloist',
                 'type' => 'text',
                 'size' => 60,
-                'desc' => 'The person who will sing this song. Leave blank if there are no soloists.'
+                'desc' => 'The person who will sing this song. Leave blank if there are no soloists.',
+                'clone' => true
+            ),
+            array(
+                'name' => 'Link',
+                'id' => 'bs_link',
+                'type' => 'text',
+                'size' => 60,
+                'desc' => '(optional) A link to the song.'
+            ),
+            array(
+                'name' => 'Status',
+                'id' => 'bs_song_status',
+                'type' => 'checkbox',
+                'desc' => 'Is retired?'
             )
         )
     );
