@@ -4,6 +4,7 @@
 	background: $background;
 	padding: 1rem;
 	color: $yellow;
+	font-weight: 300;
 	cursor: pointer;
 
 	border: 0;
@@ -21,6 +22,7 @@
 
 	.button--contrast {
 		background: $yellow;
+		font-weight: normal;
 		color: $text;
 	}
 

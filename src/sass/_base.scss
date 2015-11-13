@@ -14,7 +14,9 @@ body {
 /* typography */
 
 html {
-    font: 18px Arial;
+    font: 18px Lato;
+    font-weight: 300;
+    line-height: 1.4;
 }
 
 h1,
@@ -25,7 +27,16 @@ h5,
 h6,
 h7 {
 	font-family: Georgia;
+	font-weight: normal;
 }
+
+	h1 {
+		font-size: 3em;
+	}
+
+	h2 {
+		font-size: 2.3em;
+	}
 
 a {
 	color: $link-color;

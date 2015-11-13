@@ -13,11 +13,11 @@ function bs_legible_join($array) {
     $rtn = "";
     foreach($array as $key => $value) {
         if($key == count($array) - 1) {
-            $rtn .= $value;
+            $rtn .= str_replace(" ", "&nbsp;", $value);
         } elseif($key == count($array) - 2) {
-            $rtn .= $value . " & ";
+            $rtn .= str_replace(" ", "&nbsp;", $value) . " &amp; ";
         } else {
-            $rtn .= $value . ", ";
+            $rtn .= str_replace(" ", "&nbsp;", $value) . ", ";
         }
     }
 

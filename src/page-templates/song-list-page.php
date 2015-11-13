@@ -27,7 +27,8 @@
 	<h2>Current Songs</h2>
 	<ul class="song-list">
 	<?php query_posts(array(
-			'post_type' => 'song'
+			'post_type' => 'song',
+			'orderby' => array('title' => 'ASC')
 		));
 
 	while ( have_posts() ) : the_post();

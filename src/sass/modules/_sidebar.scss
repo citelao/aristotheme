@@ -2,6 +2,7 @@
 	@include span(4 isolate);
 	padding: 0 gutter();
 	background: $light-yellow;
+	font-weight: normal;
 
 	margin: gutter() 0;
 

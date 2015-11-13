@@ -477,7 +477,9 @@ body {
 /* typography */
 
 html {
-  font: 18px Arial;
+  font: 18px Lato;
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 h1,
@@ -488,6 +490,15 @@ h5,
 h6,
 h7 {
   font-family: Georgia;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.3em;
 }
 
 a {
@@ -656,6 +667,7 @@ a:hover {
   padding: 0 1.694915254%;
   margin: 1.694915254% 0;
   list-style: none;
+  font-weight: normal;
 }
 
 .content--full {
@@ -679,6 +691,7 @@ a:hover {
   margin-right: 1.694915254%;
   padding: 0 1.694915254%;
   background: #ffffdd;
+  font-weight: normal;
   margin: 1.694915254% 0;
   display: block;
   text-align: center;
@@ -693,6 +706,7 @@ a:hover {
   background: black;
   padding: 1rem;
   color: #FAFD4A;
+  font-weight: 300;
   cursor: pointer;
   border: 0;
   transition: all 0.2s ease-in;
@@ -712,6 +726,7 @@ a:hover {
 
 .button--contrast {
   background: #FAFD4A;
+  font-weight: normal;
   color: #333;
 }
 
@@ -732,6 +747,10 @@ a:hover {
 
 .definition-table__term {
   text-align: right;
+}
+
+.definition-table__def {
+  text-align: left;
 }
 
 .person {
@@ -855,6 +874,7 @@ a:hover {
   margin: 0 0 1.694915254% 0;
   text-align: center;
   text-decoration: inherit;
+  font-weight: 300;
   color: #FAFD4A;
   background-image: url("img/header/bg.png");
   background-size: cover;
