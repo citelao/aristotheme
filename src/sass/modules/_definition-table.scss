@@ -1,0 +1,14 @@
+.definition-table {
+	margin: 0 auto;
+	max-width: 80%;
+}
+
+.definition-table__term,
+.definition-table__def {
+	padding: 0 .5rem;
+	vertical-align: top;
+}
+
+.definition-table__term {
+	text-align: right;
+}

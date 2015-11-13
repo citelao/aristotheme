@@ -1,13 +1,28 @@
 <?php
 
-// Images :)
+// Images and RSS stuff
 add_theme_support('post-thumbnails', array('post', 'page')); 
-
-// RSS stuff
 add_theme_support('automatic-feed-links');
-
-// Title
 add_theme_support('title-tag');
+
+function bs_legible_join($array) {
+    if(!is_array($array)) {
+        return "";
+    }
+
+    $rtn = "";
+    foreach($array as $key => $value) {
+        if($key == count($array) - 1) {
+            $rtn .= $value;
+        } elseif($key == count($array) - 2) {
+            $rtn .= $value . " & ";
+        } else {
+            $rtn .= $value . ", ";
+        }
+    }
+
+    return $rtn;
+}
 
 // Add a menu
 function bs_register_menus() {

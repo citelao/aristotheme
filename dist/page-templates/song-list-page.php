@@ -23,9 +23,9 @@
 <ul class="sidebar">
 	<?php dynamic_sidebar('bs-sidebar'); ?>
 </ul>
-<section class="content content--contiguous-top">
+<section class="content content--contiguous-top content--full">
 	<h2>Current Songs</h2>
-	<ul>
+	<ul class="song-list">
 	<?php query_posts(array(
 			'post_type' => 'song'
 		));
@@ -35,33 +35,35 @@
 		$is_retired = (get_post_meta(get_the_ID(), 'bs_song_status', true) == 1);
 		if($is_retired) { continue; } 
 
+		$originals = get_post_meta(get_the_ID(), 'bs_original', true);
+		$original_string = bs_legible_join($originals, ", ");
+
 		$arrangers = get_post_meta(get_the_ID(), 'bs_arranger', true);
-		$arranger_string = join($arrangers, ", ");
+		$arranger_string = bs_legible_join($arrangers, ", ");
 
 		$soloists = get_post_meta(get_the_ID(), 'bs_soloist', true);
-		$soloist_string = join($soloists, ", ");
-
-		$originals = get_post_meta(get_the_ID(), 'bs_original', true);
-		$original_string = join($originals, ", ");
+		$soloist_string = bs_legible_join($soloists, ", ");
 	?>
-		<li>
-			<div>
-				<h3><?php the_title(); ?></h3>
-				<table class="definition-table">
+		<li class="song-list--item">
+			<h3><?php the_title(); ?></h3>
+			<table class="definition-table">
+				<tbody>
 					<tr>
-						<th>Original</th>
-						<td><?php echo $original_string; ?></td>
+						<th class="definition-table__term">Original</th>
+						<td class="definition-table__def"><?php echo $original_string; ?></td>
 					</tr>
 					<tr>
-						<th>Arrangement</th>
-						<td><?php echo $arranger_string; ?></td>
+						<th class="definition-table__term">Arrangement</th>
+						<td class="definition-table__def"><?php echo $arranger_string; ?></td>
 					</tr>
-					<tr>
-						<th>Soloist</th>
-						<td><?php echo $soloist_string; ?></td>
-					</tr>
-				</table>
-			</div>
+					<?php if($soloist_string): ?>
+						<tr>
+							<th class="definition-table__term">Soloist</th>
+							<td class="definition-table__def"><?php echo $soloist_string; ?></td>
+						</tr>
+					<?php endif; ?>
+				</tbody>
+			</table>
 		</li>
 	<?php endwhile; ?>
 	</ul>

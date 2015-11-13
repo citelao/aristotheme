@@ -1,0 +1,23 @@
+.song-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@include span(12 isolate);
+}
+
+.song-list--item {
+	/* http://stackoverflow.com/questions/7947886/css-float-clear-a-row-of-floating-elements */
+	width: span(6);
+	display: inline-block;
+	vertical-align: top;
+
+	padding: 0 span(1);
+	margin-bottom: 1rem;
+	text-align: center;
+
+	&:nth-child(2n) {
+		margin-right: 0;
+	    clear: right;
+	}
+}
