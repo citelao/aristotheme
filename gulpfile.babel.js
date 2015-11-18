@@ -31,7 +31,7 @@ gulp.task('css', () => {
     }))
     .pipe(plumber({ errorHandler: notify.onError('Error compiling SCSS!') }))
     .pipe(sass({
-      'precision': 9
+      'precision': 12
     }))
     .pipe(importCss())
     .pipe(gulp.dest('./dist'))

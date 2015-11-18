@@ -1,14 +1,15 @@
 .sidebar {
-	@include span(4 isolate);
+	width: span(4);
+	float: left;
+	
 	padding: 0 gutter() gutter();
+	margin-top: 0;
+	margin-bottom: 0;
+
 	background: $light-yellow;
+
 	font-weight: normal;
-
-	margin: gutter() 0;
-
-	display: block;
 	text-align: center;
-	clear: right;
 }
 
 	.sidebar--left {

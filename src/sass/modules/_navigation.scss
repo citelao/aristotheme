@@ -1,6 +1,6 @@
 .navigation {
 	@include span(12);
-	font-family: Georgia;
+	font-family: $serif;
 }
 
 .navigation__hamburger {

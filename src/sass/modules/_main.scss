@@ -1,5 +1,6 @@
 .main {
 	@include span(12);
+	padding: 3*gutter() gutter() 0;
 
 	background: $background-light;
 	color: $text;

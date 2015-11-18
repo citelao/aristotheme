@@ -1,0 +1,45 @@
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400|Crimson+Text:400,400italic,700);
+
+html {
+    font: 18px $serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* headers */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+	font-family: $sans;
+	font-weight: 900;
+}
+
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+
+	@include subtle;
+
+	&:focus, &:hover {
+		color: $link-hover-color;
+		text-decoration: underline;
+	}
+}
+
+em {
+	background: $light-yellow;
+	padding: 0.4rem 0;
+}

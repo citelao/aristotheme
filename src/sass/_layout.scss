@@ -2,7 +2,14 @@
 $susy: (
 	columns: 12,
 	container: 1200px,
-	global-box-sizing: border-box
+	global-box-sizing: border-box,
+	gutter-position: split,
+	debug: (
+	    image: show,
+	    color: rgba(red, 0.5),
+	    output: overlay,
+	    toggle: top right
+	)
 );
 
 .wrapper {
