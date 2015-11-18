@@ -1,6 +1,6 @@
 .definition-table {
 	margin: 0 auto;
-	max-width: 80%;
+	width: 100%;
 }
 
 .definition-table__term,
@@ -11,6 +11,7 @@
 
 .definition-table__term {
 	text-align: right;
+	width: 50%;
 }
 
 .definition-table__def {

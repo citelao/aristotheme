@@ -1,6 +1,6 @@
 .sidebar {
 	@include span(4 isolate);
-	padding: 0 gutter();
+	padding: 0 gutter() gutter();
 	background: $light-yellow;
 	font-weight: normal;
 
@@ -8,8 +8,13 @@
 
 	display: block;
 	text-align: center;
+	clear: right;
 }
 
-	.sidebar__widget {
-		display: block;
+	.sidebar--left {
+		// @include pull(8);
 	}
+
+.sidebar__widget {
+	display: block;
+}

@@ -24,6 +24,12 @@ function bs_legible_join($array) {
     return $rtn;
 }
 
+// Scripts
+function bs_register_scripts() {
+    // wp_enqueue_script('textfit', get_template_directory_uri() . '/bower_components/');
+}
+add_action('wp_enqueue_scripts', 'bs_register_scripts');
+
 // Add a menu
 function bs_register_menus() {
   register_nav_menu('main-nav', 'Main Navigation');
@@ -60,7 +66,7 @@ function bs_register_posts() {
             'not_found_in_trash' => 'No members found in trash'
             ),
         'description' => 'A member or alum of the group',
-        'show_ui' => true,
+        'public' => true,
         'menu_icon' => 'dashicons-smiley',
         'supports' => array('thumbnail', 'title')
     ));
@@ -226,7 +232,13 @@ function bs_register_meta_boxes($meta_boxes){
                 'id' => 'bs_song_status',
                 'type' => 'checkbox',
                 'desc' => 'Is retired?'
-            )
+            ),
+            array(
+                'name' => 'Featured',
+                'id' => 'bs_song_featured',
+                'type' => 'checkbox',
+                'desc' => 'Is featured? Only the first featured song gets featured.'
+            ),
         )
     );
     return $meta_boxes;

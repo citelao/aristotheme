@@ -5,18 +5,23 @@
 	padding: 1rem;
 	color: $yellow;
 	font-weight: 300;
+	text-align: center;
 	cursor: pointer;
 
 	border: 0;
 
 	@include punchy;
 
-	&:hover {
+	&:hover, &:focus {
 		background: $yellow;
 		color: $text;
 		text-decoration: none;
 
 		transform: scale(1.1);
+	}
+
+	&:active {
+		transform: scale(0.9);
 	}
 }
 

@@ -23,6 +23,17 @@
 <ul class="sidebar">
 	<?php dynamic_sidebar('bs-sidebar'); ?>
 </ul>
+
+<section class="content content--contiguous-bottom content--contiguous-top content--right">
+	(iframe)
+</section>
+<ul class="sidebar sidebar--left">
+	<h2>(title)</h2>
+	<p>(description)</p>
+	<p>
+		<a href="https://youtube.com/user/thearistocatswashu/" class="button">Watch more on YouTube&nbsp;&rarr;</a>
+	</p>
+</ul>
 <section class="content content--contiguous-top content--full">
 	<h2>Current Songs</h2>
 	<ul class="song-list">

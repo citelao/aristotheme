@@ -477,7 +477,7 @@ body {
 /* typography */
 
 html {
-  font: 18px Lato;
+  font: 20px Lato;
   font-weight: 300;
   line-height: 1.4;
 }
@@ -498,7 +498,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.3em;
+  font-size: 2em;
 }
 
 a {
@@ -516,6 +516,11 @@ a:focus,
 a:hover {
   color: #23527c;
   text-decoration: underline;
+}
+
+em {
+  background: #ffffdd;
+  padding: 0.2rem;
 }
 
 /* grid system! */
@@ -539,7 +544,7 @@ a:hover {
   margin-right: 0;
   background-image: url("img/header/bg.png");
   background-size: 300px 300px;
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   text-align: center;
 }
 
@@ -629,7 +634,7 @@ a:hover {
 
 .navigation__item a {
   display: block;
-  padding: 3rem;
+  padding: 3em;
   color: inherit;
   text-decoration: inherit;
   transition: all 0.2s ease-in;
@@ -689,12 +694,13 @@ a:hover {
   width: 32.203389831%;
   float: left;
   margin-right: 1.694915254%;
-  padding: 0 1.694915254%;
+  padding: 0 1.694915254% 1.694915254%;
   background: #ffffdd;
   font-weight: normal;
   margin: 1.694915254% 0;
   display: block;
   text-align: center;
+  clear: right;
 }
 
 .sidebar__widget {
@@ -707,6 +713,7 @@ a:hover {
   padding: 1rem;
   color: #FAFD4A;
   font-weight: 300;
+  text-align: center;
   cursor: pointer;
   border: 0;
   transition: all 0.2s ease-in;
@@ -717,11 +724,16 @@ a:hover {
   transition: all 0s ease-in;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background: #FAFD4A;
   color: #333;
   text-decoration: none;
   transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.9);
 }
 
 .button--contrast {
@@ -736,7 +748,7 @@ a:hover {
 
 .definition-table {
   margin: 0 auto;
-  max-width: 80%;
+  width: 100%;
 }
 
 .definition-table__term,
@@ -747,6 +759,7 @@ a:hover {
 
 .definition-table__term {
   text-align: right;
+  width: 50%;
 }
 
 .definition-table__def {
@@ -771,8 +784,8 @@ a:hover {
   position: relative;
   margin: 0;
   padding: 0;
-  width: 33.333333333%;
-  padding-bottom: 33.333333333%;
+  width: 25%;
+  padding-bottom: 25%;
 }
 
 .person--small {
@@ -812,6 +825,10 @@ a:hover {
   transform: scale(1.2);
 }
 
+.person__item--link:active {
+  transform: scale(0.8);
+}
+
 .person__item--link a {
   color: white;
 }
@@ -836,8 +853,13 @@ a:hover {
   color: white;
 }
 
+.person__name {
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
 .person__role {
-  margin-top: -1rem;
+  margin: -0.5rem 0.5rem 0.5rem;
   font-weight: normal;
 }
 

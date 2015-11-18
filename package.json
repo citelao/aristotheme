@@ -8,6 +8,7 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-import-css": "^0.1.2",
     "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-run": "^1.6.11",
     "gulp-sass": "^2.0.4"

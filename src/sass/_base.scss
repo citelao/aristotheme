@@ -14,7 +14,7 @@ body {
 /* typography */
 
 html {
-    font: 18px Lato;
+    font: 20px Lato;
     font-weight: 300;
     line-height: 1.4;
 }
@@ -35,7 +35,7 @@ h7 {
 	}
 
 	h2 {
-		font-size: 2.3em;
+		font-size: 2em;
 	}
 
 a {
@@ -48,4 +48,9 @@ a {
 		color: $link-hover-color;
 		text-decoration: underline;
 	}
+}
+
+em {
+	background: $light-yellow;
+	padding: 0.2rem;
 }

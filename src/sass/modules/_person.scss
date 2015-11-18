@@ -1,5 +1,5 @@
 .person {
-	@include block-grid(3);
+	@include block-grid(4);
 	@include span(12 isolate);
 	// margin-left: - gutter() - 0.1%;
 	margin-top: 0;
@@ -21,6 +21,10 @@
 
 		&:hover, &:focus {
 			transform: scale(1.2);
+		}
+
+		&:active {
+			transform: scale(0.8);
 		}
 
 		a {
@@ -52,9 +56,11 @@
 
 .person__name {
 	// margin-bottom: 0;
+	font-size: 1rem;
+	margin: 0.5rem;
 }
 
 .person__role {
-	margin-top: -1rem;
+	margin: -0.5rem 0.5rem 0.5rem;
 	font-weight: normal;
 }
