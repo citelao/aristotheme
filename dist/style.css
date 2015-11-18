@@ -585,10 +585,8 @@ head:hover ~ body .wrapper:before {
 }
 
 .header {
-  width: 98.3333333333%;
+  width: 100%;
   float: left;
-  margin-left: 0.833333333333%;
-  margin-right: 0.833333333333%;
   background-image: url("img/header/bg.png");
   background-size: 300px 300px;
   padding: 2rem 2rem;
@@ -705,11 +703,9 @@ head:hover ~ body .wrapper:before {
 }
 
 .main {
-  width: 98.3333333333%;
+  width: 100%;
   float: left;
-  margin-left: 0.833333333333%;
-  margin-right: 0.833333333333%;
-  padding: 2.5% 0.833333333333% 0;
+  padding: 0.833333333333% 0 0;
   background: #fff;
   color: #333;
 }
@@ -744,6 +740,8 @@ head:hover ~ body .wrapper:before {
 .sidebar {
   width: 31.6666666667%;
   float: left;
+  margin-left: 0.833333333333%;
+  margin-right: 0.833333333333%;
   padding: 0 0.833333333333% 0.833333333333%;
   margin-top: 0;
   margin-bottom: 0;
@@ -819,11 +817,8 @@ head:hover ~ body .wrapper:before {
   display: block;
   list-style: none;
   padding: 0;
-  width: 101.666666667%;
+  width: 100%;
   float: left;
-  margin-left: 0.833333333333%;
-  margin-right: 0.833333333333%;
-  margin-left: -0.833333333333%;
   margin-top: 0;
   margin-bottom: 0;
 }

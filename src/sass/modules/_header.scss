@@ -1,5 +1,5 @@
 .header {
-	@include span(12);
+	@include span(12 nest);
 	background-image: url(img/header/bg.png);
     background-size: 300px 300px;
 

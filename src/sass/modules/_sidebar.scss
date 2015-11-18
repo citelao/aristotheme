@@ -1,7 +1,6 @@
 .sidebar {
-	width: span(4);
-	float: left;
-	
+	@include span(4);
+
 	padding: 0 gutter() gutter();
 	margin-top: 0;
 	margin-bottom: 0;

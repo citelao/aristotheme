@@ -1,8 +1,6 @@
 .person {
 	@include block-grid(4);
-	// @include span(12 isolate)
-	@include span(12 isolate wider);
-	margin-left: - gutter();
+	@include span(12 nest);
 	margin-top: 0;
 	margin-bottom: 0;
 }
