@@ -3,6 +3,7 @@
 // Images and RSS stuff
 add_theme_support('post-thumbnails', array('post', 'page')); 
 add_theme_support('automatic-feed-links');
+add_theme_support('html5');
 add_theme_support('title-tag');
 
 function bs_legible_join($array) {

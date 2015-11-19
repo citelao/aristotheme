@@ -491,8 +491,8 @@ h4,
 h5,
 h6,
 h7 {
-  font-family: "Lato";
-  font-weight: 900;
+  font-family: "Open Sans";
+  font-weight: 700;
 }
 
 h1 {
@@ -500,7 +500,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 a {
@@ -518,6 +518,12 @@ a:focus,
 a:hover {
   color: #23527c;
   text-decoration: underline;
+}
+
+blockquote {
+  font-size: 1.3em;
+  font-style: italic;
+  margin-left: 17.2413793103%;
 }
 
 em {
@@ -691,6 +697,7 @@ head:hover ~ body .wrapper:before {
 }
 
 .navigation__item.current-menu-item a,
+.navigation__item.current_page_parent a,
 .navigation__item a:focus,
 .navigation__item a:hover {
   transform: scale(1.2);
@@ -711,11 +718,13 @@ head:hover ~ body .wrapper:before {
 }
 
 .content {
-  width: 65%;
+  width: 48.3333333333%;
   float: left;
   margin-left: 0.833333333333%;
   margin-right: 0.833333333333%;
+  margin-left: 9.16666666667%;
   margin-top: 0;
+  padding: 0;
   list-style: none;
   font-weight: normal;
 }
@@ -723,6 +732,7 @@ head:hover ~ body .wrapper:before {
 .content--full {
   width: 100%;
   float: left;
+  margin-left: 0.833333333333%;
 }
 
 .content--right {
@@ -737,17 +747,27 @@ head:hover ~ body .wrapper:before {
   margin-top: 0;
 }
 
+.content--contrast {
+  background: #ffffdd;
+}
+
 .sidebar {
   width: 31.6666666667%;
   float: left;
   margin-left: 0.833333333333%;
   margin-right: 0.833333333333%;
+  margin-left: 9.16666666667%;
   padding: 0 0.833333333333% 0.833333333333%;
   margin-top: 0;
   margin-bottom: 0;
   background: #ffffdd;
   font-weight: normal;
   text-align: center;
+}
+
+.sidebar--left {
+  margin-left: 0.833333333333%;
+  margin-left: -82.5%;
 }
 
 .sidebar__widget {

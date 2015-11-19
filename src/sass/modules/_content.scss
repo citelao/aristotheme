@@ -1,11 +1,15 @@
 .content {
-	@include span(8);
+	@include span(6);
+	@include push(1);
 
 	// padding: gutter() gutter();
 	margin-top: 0;
+	padding: 0;
 
 	list-style: none;
 	font-weight: normal;
+
+	// padding: 0 5rem;
 
 	a {
 		// @include linkUnderlines($background-light, $text);
@@ -19,6 +23,7 @@
 
 	.content--full {
 		@include span(12 nest);
+		@include push(0);
 	}
 
 	.content--right {
@@ -31,4 +36,8 @@
 
 	.content--contiguous-top {
 		margin-top: 0;
+	}
+
+	.content--contrast {
+		background: $light-yellow;
 	}

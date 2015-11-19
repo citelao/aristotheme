@@ -16,7 +16,8 @@ h5,
 h6,
 h7 {
 	font-family: $sans;
-	font-weight: 900;
+	font-weight: 700;
+	// text-transform: uppercase;
 }
 
 	h1 {
@@ -24,7 +25,7 @@ h7 {
 	}
 
 	h2 {
-		font-size: 1.5em;
+		font-size: 1.3em;
 	}
 
 a {
@@ -37,6 +38,13 @@ a {
 		color: $link-hover-color;
 		text-decoration: underline;
 	}
+}
+
+blockquote {
+	font-size: 1.3em;
+	font-style: italic;
+
+	margin-left: span(1 of 6) + gutter(6);
 }
 
 em {

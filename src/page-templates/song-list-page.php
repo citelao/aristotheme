@@ -6,26 +6,17 @@
  get_header(); ?>
 <section class="content content--contiguous-bottom">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-		<h2><?php
-			// if we have an alternate title, use that
-			$alt_title = get_post_meta(get_the_ID(), 'bs_alt_title', true);
-			if($alt_title) {
-				echo $alt_title;
-			} else {
-				the_title();
-			}
-		?></h2>
 		<p><?php the_content(); ?></p>
 	<?php endwhile; else : ?>
 		no posts
  	<?php endif; ?>
 </section>
-<ul class="sidebar">
+<!-- <ul class="sidebar">
 	<?php dynamic_sidebar('bs-sidebar'); ?>
-</ul>
+</ul> -->
 
 <section class="content content--contiguous-bottom content--contiguous-top content--right">
-	(iframe)
+	<iframe width="780" height="406.6875" src="https://www.youtube.com/embed/F4ICMxmSLBc" frameborder="0" allowfullscreen="" data-aspect="1.7777777777777777"></iframe>
 </section>
 <ul class="sidebar sidebar--left">
 	<h2>(title)</h2>
@@ -34,8 +25,9 @@
 		<a href="https://youtube.com/user/thearistocatswashu/" class="button">Watch more on YouTube&nbsp;&rarr;</a>
 	</p>
 </ul>
-<section class="content content--contiguous-top content--full">
+<section class="content content--contiguous-top">
 	<h2>Current Songs</h2>
+</section>
 	<ul class="song-list">
 	<?php query_posts(array(
 			'post_type' => 'song',

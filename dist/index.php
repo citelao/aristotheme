@@ -8,8 +8,7 @@
 		</li>
 	<?php endwhile; else : ?>
 		<li>
-			<h2>No posts.</h2>
-			<p>I don't know how that happened&#8230;</p>
+			<h2>No results for &ldquo;<?php echo get_search_query(); ?>&rdquo;</h2>
 			<p>
 				The post you're looking for might have been deleted (oops!). I would suggest going <a href="/">home</a> or <a href="/contact/">contacting us</a> about the problem.
 			</p>

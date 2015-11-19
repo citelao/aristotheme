@@ -15,23 +15,7 @@
     <meta name="twitter:title" content="The Washington University Aristocats">
     <meta name="twitter:description" content="The Washington University Aristocats wreak havoc and sing Disney music at Washington University in St. Louis. Listen to our music &amp; join us!">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffc40d">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:800,700,400|Crimson+Text:400,400italic,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 
@@ -64,8 +48,12 @@
 	<header style="<?php echo $style; ?>" class="<?php echo $class; ?>">
 		<?php if(is_front_page()): ?>
 			<img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/img/header/logo.svg" alt="The Aristocat typographic logo, with the phrase 'The Aristocats a cappella' written out in a style similar to the Disney logo" class="header__logo">
-		<?php elseif(is_singular() || is_home()): ?>
+		<?php elseif(is_page() || is_home()): ?>
 			<h1 class="header__title"><?php single_post_title(); ?></h1>
+        <?php elseif(is_singular('post')): ?>
+            <h1 class="header__title">news</h1>
+        <?php elseif(is_search()): ?>
+            <h1 class="header__title">Search results</h1>
         <?php else: ?>
             <h1 class="header__title">Oops...</h1>
 		<?php endif; ?>

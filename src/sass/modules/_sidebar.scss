@@ -1,5 +1,6 @@
 .sidebar {
 	@include span(4);
+	@include push(1);
 
 	padding: 0 gutter() gutter();
 	margin-top: 0;
@@ -12,7 +13,8 @@
 }
 
 	.sidebar--left {
-		// @include pull(8);
+		@include push(0);
+		@include pull(10);
 	}
 
 .sidebar__widget {
