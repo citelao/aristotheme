@@ -41,3 +41,9 @@
 	.content--contrast {
 		background: $light-yellow;
 	}
+
+.content__image {
+	width: span(6 of 6 wide);
+	// margin-left: - span(1 of 6 wide) - 2 * gutter(6 wider);
+	// margin-left: - span(1 of 6) - gutter(6);
+}

@@ -648,10 +648,8 @@ head:hover ~ body .wrapper:before {
 }
 
 .skip-to-content:focus {
-  width: 98.3333333333%;
+  width: 100%;
   float: left;
-  margin-left: 0.833333333333%;
-  margin-right: 0.833333333333%;
   padding: 1rem;
   height: auto;
   position: static;
@@ -751,6 +749,10 @@ head:hover ~ body .wrapper:before {
   background: #ffffdd;
 }
 
+.content__image {
+  width: 100%;
+}
+
 .sidebar {
   width: 31.6666666667%;
   float: left;
@@ -759,7 +761,7 @@ head:hover ~ body .wrapper:before {
   margin-left: 9.16666666667%;
   padding: 0 0.833333333333% 0.833333333333%;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.833333333333%;
   background: #ffffdd;
   font-weight: normal;
   text-align: center;
@@ -775,11 +777,12 @@ head:hover ~ body .wrapper:before {
 }
 
 .button {
-  display: inline-block;
+  display: block;
   background: black;
   padding: 1rem;
   color: #FAFD4A;
   font-weight: 300;
+  font-family: "Open Sans";
   text-align: center;
   cursor: pointer;
   border: 0;
@@ -809,8 +812,8 @@ head:hover ~ body .wrapper:before {
   color: #333;
 }
 
-.button--block {
-  display: block;
+.button--inline {
+  display: inline-block;
 }
 
 .definition-table {
@@ -927,6 +930,10 @@ head:hover ~ body .wrapper:before {
 .person__role {
   margin: -0.5rem 0.5rem 0.5rem;
   font-weight: normal;
+}
+
+.post {
+  padding-bottom: 2rem;
 }
 
 .song-list {

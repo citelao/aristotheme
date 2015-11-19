@@ -8,7 +8,7 @@
 	text-decoration: none;
 
 	&:focus {
-		@include span(12);
+		@include span(12 nest);
 		padding: 1rem;
 		height: auto;
 		position: static;
