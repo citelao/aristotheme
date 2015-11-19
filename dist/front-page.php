@@ -28,11 +28,10 @@
 		$blurb = $meta['bs_featured_summary'];
 
 		$attachment = '';
-		if($meta['bs_header_image']) {
-			$attachment = $meta['bs_header_image'][0];
-		}
-		if($meta['bs_featured_image']) {
+		if($meta['bs_featured_image'][0]) {
 			$attachment = $meta['bs_featured_image'][0];
+		} elseif(get_post_thumbnail_id($post->object_id)) {
+			$attachment = get_post_thumbnail_id($post->object_id);
 		}
 		$img = wp_get_attachment_image_src($attachment, 'full');
 		$style = '';
