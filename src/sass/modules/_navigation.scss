@@ -2,9 +2,36 @@
 	@include span(full nest);
 	font-family: $serif;
 	overflow: hidden;
+
+	position: absolute;
+	top: 0;
+	width: 100%;
+	@include breakpoint($md) {
+		position: static;
+		overflow: visible;
+	}
 }
 
+	.navigation--active {
+		background: $background;
+
+		.navigation__list {
+			display: block;
+		}
+	}
+
 .navigation__hamburger {
+	background: 0;
+	border: 0;
+	padding: 2rem;
+	color: $text-yellow;
+
+	float: right;
+
+	&:hover, &:focus {
+		color: $text-white;
+	}
+
 	@include breakpoint($md) {
 		display: none;
 	}
@@ -14,10 +41,10 @@
 	padding: 0;
 	margin: 0;
 
-	// display: none;
-	// @include breakpoint($md) {
+	display: none;
+	@include breakpoint($md) {
 		display: block;
-	// }
+	}
 }
 
 .navigation__item {

@@ -59,7 +59,7 @@
 		<?php endif; ?>
 	</header>
 
-	<nav class="navigation" id="nav">
+	<nav class="navigation navigation--active" id="nav">
 		<button id="nav-toggler" class="navigation__hamburger">Menu</button>
 		<?php wp_nav_menu(array(
 			'container' => 'false',

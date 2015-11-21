@@ -706,6 +706,37 @@ head:hover ~ body .wrapper:before {
   float: left;
   font-family: "Crimson Text";
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@media (min-width: 740px) {
+  .navigation {
+    position: static;
+    overflow: visible;
+  }
+}
+
+.navigation--active {
+  background: black;
+}
+
+.navigation--active .navigation__list {
+  display: block;
+}
+
+.navigation__hamburger {
+  background: 0;
+  border: 0;
+  padding: 2rem;
+  color: #FAFD4A;
+  float: right;
+}
+
+.navigation__hamburger:hover,
+.navigation__hamburger:focus {
+  color: white;
 }
 
 @media (min-width: 740px) {
@@ -717,7 +748,13 @@ head:hover ~ body .wrapper:before {
 .navigation__list {
   padding: 0;
   margin: 0;
-  display: block;
+  display: none;
+}
+
+@media (min-width: 740px) {
+  .navigation__list {
+    display: block;
+  }
 }
 
 .navigation__item {
