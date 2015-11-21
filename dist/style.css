@@ -927,7 +927,8 @@ head:hover ~ body .wrapper:before {
   display: block;
 }
 
-.button {
+.button,
+.search-submit {
   display: block;
   background: black;
   padding: 1rem;
@@ -941,19 +942,24 @@ head:hover ~ body .wrapper:before {
 }
 
 .button:hover,
-.button:focus {
+.search-submit:hover,
+.button:focus,
+.search-submit:focus {
   transition: all 0s ease-in;
 }
 
 .button:hover,
-.button:focus {
+.search-submit:hover,
+.button:focus,
+.search-submit:focus {
   background: #FAFD4A;
   color: #333;
   text-decoration: none;
   transform: scale(1.1);
 }
 
-.button:active {
+.button:active,
+.search-submit:active {
   transform: scale(0.9);
 }
 
@@ -963,7 +969,8 @@ head:hover ~ body .wrapper:before {
   color: #333;
 }
 
-.button--inline {
+.button--inline,
+.search-submit {
   display: inline-block;
 }
 
@@ -1245,4 +1252,27 @@ head:hover ~ body .wrapper:before {
 
 .footer__image {
   vertical-align: middle;
+}
+
+/* search field for WP search */
+
+.search-form {
+  clear: both;
+}
+
+.search-field {
+  padding: 18px;
+  margin: 0 0 1rem 0;
+  border: 2px solid #333;
+  background: 0;
+  display: block;
+  float: left;
+  font-family: "Open Sans";
+  height: 20px;
+}
+
+.search-submit {
+  float: left;
+  height: 60px;
+  margin: 0 0 1rem 0;
 }

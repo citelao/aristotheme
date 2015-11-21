@@ -1,0 +1,24 @@
+/* search field for WP search */
+.search-form {
+	@include break;
+}
+
+.search-field {
+	padding: 18px;
+	margin: 0 0 1rem 0;
+	border: 2px solid $text;
+	background: 0;
+	display: block;
+	float: left;
+
+	font-family: $sans;
+	height: 20px;
+}
+
+.search-submit {
+	@extend .button;
+	@extend .button--inline;
+	float: left;
+	height: 60px;
+	margin: 0 0 1rem 0;
+}

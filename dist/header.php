@@ -32,7 +32,7 @@
 
 	$attachment = get_post_thumbnail_id(get_queried_object()->ID);
 	$img = wp_get_attachment_image_src($attachment, 'full');
-    if(!$img && is_singular('post')) {
+    if(!$img && (is_singular('post') || (is_search()))) {
         if (get_option('show_on_front')=='page') {
           $page_id = get_option('page_for_posts');
           $page = get_post($page_id);
