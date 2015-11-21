@@ -1063,6 +1063,16 @@ head:hover ~ body .wrapper:before {
   }
 }
 
+.person--small .person__name {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.person--small .person__role {
+  margin-top: -0.5rem;
+  margin-bottom: 0.2rem;
+}
+
 .person__item {
   background-size: cover;
   background-image: url("img/members/generic.jpg");

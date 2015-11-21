@@ -79,10 +79,17 @@
 		if($img) {
 			$style = $style = 'background-image: url(' . $img[0] . ')';
 		}
+
+		$role = get_post_meta(get_the_ID(), 'bs_member_role', true);
+		$role_block = '';
+		if($role != 'none') {
+			$role_block = '<h4 class="person__role">' . $role . '</h4>';
+		}
 		?>
 		<li style="<?php echo $style; ?>" class="person__item">
 			<div class="person__content">
-				<h3><?php the_title(); ?></h3>
+				<h3 class="person__name"><?php the_title(); ?></h3>
+				<?php echo $role_block; ?>
 			</div>
 		</li>
 	<?php endwhile; ?>
