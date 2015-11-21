@@ -33,6 +33,7 @@
 
 	.content--right {
 		@include breakpoint($md) {
+			@include span(8);
 			@include push(4);
 		}
 	}

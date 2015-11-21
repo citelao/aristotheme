@@ -838,6 +838,10 @@ head:hover ~ body .wrapper:before {
 
 @media (min-width: 740px) {
   .content--right {
+    width: 65%;
+    float: left;
+    margin-left: 0.833333333333%;
+    margin-right: 0.833333333333%;
     margin-left: 34.1666666667%;
   }
 }
@@ -886,7 +890,7 @@ head:hover ~ body .wrapper:before {
 @media (min-width: 740px) {
   .sidebar--left {
     margin-left: 0.833333333333%;
-    margin-left: -82.5%;
+    margin-left: -99.1666666667%;
   }
 }
 

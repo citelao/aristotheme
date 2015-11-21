@@ -21,7 +21,7 @@
 	.sidebar--left {
 		@include breakpoint($md) {
 			@include push(0);
-			@include pull(10);
+			@include pull(12);
 		}
 	}
 

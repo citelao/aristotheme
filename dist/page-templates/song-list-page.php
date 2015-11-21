@@ -22,7 +22,7 @@ $featid = get_post_meta($id, 'bs_featured_song', true);
 if($featid): 
 	$song = get_post($featid);
 	$url = get_post_meta($id, 'bs_featured_song_embed', true);
-	$embed = wp_oembed_get($url, array('width' => '780', 'data-aspect' => '1.7777777777777777'));
+	$embed = wp_oembed_get($url, array('width' => '780', 'height' => '585'));
 
 	$title = $song->post_title;
 	$arrangers = get_post_meta($song->ID, 'bs_arranger', true);

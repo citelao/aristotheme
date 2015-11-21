@@ -43,7 +43,7 @@ function videoOnResizer() {
 // onready equiv
 (function() {
   document.getElementById('nav-toggler').addEventListener('click', showMenu);
-  
+
   var resizer = videoOnResizer();
   window.onresize = resizer;
   resizer();
