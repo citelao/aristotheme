@@ -28,6 +28,7 @@ function bs_legible_join($array) {
 // Scripts
 function bs_register_scripts() {
     // wp_enqueue_script('textfit', get_template_directory_uri() . '/bower_components/');
+    wp_enqueue_script('textfit', get_template_directory_uri() . '/js/main.js', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'bs_register_scripts');
 

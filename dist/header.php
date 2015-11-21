@@ -33,6 +33,16 @@
 
 	$attachment = get_post_thumbnail_id(get_queried_object()->ID);
 	$img = wp_get_attachment_image_src($attachment, 'full');
+    if(!$img && is_singular('post')) {
+        if (get_option('show_on_front')=='page') {
+          $page_id = get_option('page_for_posts');
+          $page = get_post($page_id);
+        } else {
+          $page = false;
+        }
+        $attachment = get_post_thumbnail_id($page->ID);
+        $img = wp_get_attachment_image_src($attachment, 'full');
+    }
 	$style = '';
     $class = 'header';
 	if($img) {
@@ -59,7 +69,7 @@
 		<?php endif; ?>
 	</header>
 
-	<nav class="navigation navigation--active" id="nav">
+	<nav class="navigation" id="nav">
 		<button id="nav-toggler" class="navigation__hamburger">Menu</button>
 		<?php wp_nav_menu(array(
 			'container' => 'false',

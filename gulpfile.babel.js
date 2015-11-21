@@ -12,15 +12,16 @@ import sass from 'gulp-sass';
 
 gulp.task('default', ['build']);
 
-gulp.task('serve', ['css', 'php', 'img', 'otherimage', 'lib'], () => {
+gulp.task('serve', ['css', 'php', 'js', 'img', 'otherimage', 'lib'], () => {
   gulp.watch('src/sass/**/*.scss', ['css']);
   gulp.watch('src/**/*.php', ['php']);
+  gulp.watch(['src/**/*.js'], ['js']);
   gulp.watch('src/img/**/*.{jpg,jpeg,png}', ['img']);
   gulp.watch('src/img/**/*.{svg, gif}', ['otherimage']);
   gulp.watch(['lib/**/*', 'bower_components/**/*'], ['lib']);
 });
 
-gulp.task('build', ['css', 'php', 'img', 'otherimage', 'lib']);
+gulp.task('build', ['css', 'php', 'js', 'img', 'otherimage', 'lib']);
 
 gulp.task('css', () => {
   return gulp.src('src/sass/**/*.scss')
@@ -48,6 +49,16 @@ gulp.task('php', () => {
     .pipe(notify({
       'onLast': true,
       'message': 'Compiled PHP.',
+      'title': 'Build Status'
+    }));
+});
+
+gulp.task('js', () => {
+  return gulp.src(['src/**/*.js'])
+    .pipe(gulp.dest('dist/'))
+    .pipe(notify({
+      'onLast': true,
+      'message': 'Compiled scripts.',
       'title': 'Build Status'
     }));
 });
