@@ -1,5 +1,5 @@
 .spotlight {
-	@include span(12);
+	@include span(12 nest);
 	margin-bottom: gutter();
 
 	text-align: center;
@@ -32,9 +32,25 @@
 		@include span(6);
 	}
 
+	.spotlight--article {
+		.spotlight__content {
+			// margin-left: 0;
+			margin-top: span(2);
+			margin-bottom: span(1);
+			// padding-left: span(1) + 2*gutter();
+			// padding-right: span(1) + 2*gutter();
+
+			@include span(6);
+			@include push(1);
+		}
+	}
+
 .spotlight__content {
-	width: span(6);
-	margin: 15rem auto 0;
+	width: span(6 nest);
+	// margin: 15rem auto 0;
+	margin-top: span(4);
+	margin-bottom: span(1);
+	@include push(1);
 	padding: 2rem;
 
 	background: black;

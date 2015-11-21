@@ -44,7 +44,10 @@ blockquote {
 	font-size: 1.3em;
 	font-style: italic;
 
-	margin-left: span(1 of 6) + gutter(6);
+	margin: 0;
+	@include breakpoint($md) {
+		margin-left: span(1 of 6) + gutter(6);
+	}
 }
 
 em {

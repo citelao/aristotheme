@@ -19,6 +19,7 @@
   "dependencies": {
     "normalize-css": "normalize.css#~3.0.3",
     "susy": "~2.2.6",
-    "textfit": "~2.2.2"
+    "textfit": "~2.2.2",
+    "compass-breakpoint": "~2.6.1"
   }
 }

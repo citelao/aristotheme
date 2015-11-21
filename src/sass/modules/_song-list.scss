@@ -8,7 +8,10 @@
 
 .song-list--item {
 	/* http://stackoverflow.com/questions/7947886/css-float-clear-a-row-of-floating-elements */
-	width: span(6);
+	width: span(full);
+	@include breakpoint($md) {
+		width: span(6);
+	}
 	display: inline-block;
 	vertical-align: top;
 

@@ -1,17 +1,23 @@
 .navigation {
-	@include span(12);
+	@include span(full nest);
 	font-family: $serif;
+	overflow: hidden;
 }
 
 .navigation__hamburger {
-	display: none;
-	/* TODO */
+	@include breakpoint($md) {
+		display: none;
+	}
 }
 
 .navigation__list {
 	padding: 0;
 	margin: 0;
-	display: block;
+
+	// display: none;
+	// @include breakpoint($md) {
+		display: block;
+	// }
 }
 
 .navigation__item {
@@ -20,11 +26,17 @@
 
 	color: $yellow;
 	text-decoration: none;
-	// font-size: 1.2rem;
+	text-align: center;
+
+	width: 100%;
+	@include breakpoint($md) {
+		width: auto;
+	}
 
 	a {
 		display: block;
 		padding: 3em;
+
 		color: inherit;
 		text-decoration: inherit;
 

@@ -8,13 +8,11 @@
 
 		<p>
 			<a href="http://su.wustl.edu" class="footer__link">
-				<img class="footer__image" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/img/footer/sulogo.svg" alt="Student Union Logo" height="50" width="50">
-			Student Union
+				<img class="footer__image" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/img/footer/sulogo.svg" alt="Student Union Logo" height="50" width="50">&nbsp;Student&nbsp;Union
 			</a>
 
 			<a href="http://wustl.edu" class="footer__link">
-				<img class="footer__image" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/img/footer/wustllogo.svg" alt="WUSTL Logo" height="50" width="50">
-				Washington University in St. Louis
+				<img class="footer__image" src="<?php echo get_bloginfo('stylesheet_directory'); ?>/img/footer/wustllogo.svg" alt="WUSTL Logo" height="50" width="50">&nbsp;Washington&nbsp;University&nbsp;in&nbsp;St.&nbsp;Louis
 			</a>
 		</p>
 

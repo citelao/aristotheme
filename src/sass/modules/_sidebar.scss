@@ -1,10 +1,16 @@
 .sidebar {
-	@include span(4);
+	@include span(10);
 	@include push(1);
+	margin-bottom: span(1);
+	@include breakpoint($md) {
+		@include span(4);
+		@include push(1);
+		margin-bottom: gutter();
+	}
 
 	padding: 0 gutter() gutter();
 	margin-top: 0;
-	margin-bottom: gutter();
+	
 
 	background: $light-yellow;
 
@@ -13,8 +19,10 @@
 }
 
 	.sidebar--left {
-		@include push(0);
-		@include pull(10);
+		@include breakpoint($md) {
+			@include push(0);
+			@include pull(10);
+		}
 	}
 
 .sidebar__widget {

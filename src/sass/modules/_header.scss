@@ -3,13 +3,22 @@
 	background-image: url(img/header/bg.png);
     background-size: 300px 300px;
 
-    padding: 2rem 2rem;
+    padding: 2rem 0;
     text-align: center;
+
+    @include breakpoint($md) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 }
 
 	.header--jumbo {
-		padding: 150px 2rem;
-		height: 600px;
+		@include breakpoint($md) {
+			padding: 150px 2rem;
+			height: 600px;
+		}
+		padding: 75px 0;
+		height: 4*75px;
 	}
 
 	.header--bleed {
@@ -34,12 +43,19 @@
 	}
 
 	.header__title {
-		font-size: 6rem;
+		font-size: 3rem;
+		@include breakpoint($md) {
+			font-size: 6rem;
+		}
 		color: $yellow;
 	}
 
 	.header__logo {
-		width: 75px * 10;
 		margin: 0 auto;
 		background: $background;
+
+		max-width: 100%;
+		@include breakpoint($md) {
+			width: 75px * 10;
+		}
 	}

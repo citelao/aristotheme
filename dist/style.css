@@ -459,6 +459,8 @@ th {
 
 /* fonts */
 
+/* breakpoints */
+
 /* Border box */
 
 html {
@@ -474,6 +476,16 @@ html {
 body {
   background: black;
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* https://make.wordpress.org/accessibility/2015/02/09/hiding-text-for-screen-readers-with-wordpress-core/ */
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
 html {
@@ -523,7 +535,13 @@ a:hover {
 blockquote {
   font-size: 1.3em;
   font-style: italic;
-  margin-left: 17.2413793103%;
+  margin: 0;
+}
+
+@media (min-width: 740px) {
+  blockquote {
+    margin-left: 17.2413793103%;
+  }
 }
 
 em {
@@ -537,6 +555,7 @@ em {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  min-width: 320px;
 }
 
 .wrapper:after {
@@ -595,13 +614,27 @@ head:hover ~ body .wrapper:before {
   float: left;
   background-image: url("img/header/bg.png");
   background-size: 300px 300px;
-  padding: 2rem 2rem;
+  padding: 2rem 0;
   text-align: center;
 }
 
+@media (min-width: 740px) {
+  .header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 .header--jumbo {
-  padding: 150px 2rem;
-  height: 600px;
+  padding: 75px 0;
+  height: 300px;
+}
+
+@media (min-width: 740px) {
+  .header--jumbo {
+    padding: 150px 2rem;
+    height: 600px;
+  }
 }
 
 .header--bleed {
@@ -625,14 +658,26 @@ head:hover ~ body .wrapper:before {
 }
 
 .header__title {
-  font-size: 6rem;
+  font-size: 3rem;
   color: #FAFD4A;
 }
 
+@media (min-width: 740px) {
+  .header__title {
+    font-size: 6rem;
+  }
+}
+
 .header__logo {
-  width: 750px;
   margin: 0 auto;
   background: black;
+  max-width: 100%;
+}
+
+@media (min-width: 740px) {
+  .header__logo {
+    width: 750px;
+  }
 }
 
 .skip-to-content {
@@ -657,16 +702,16 @@ head:hover ~ body .wrapper:before {
 }
 
 .navigation {
-  width: 98.3333333333%;
+  width: 100%;
   float: left;
-  margin-left: 0.833333333333%;
-  margin-right: 0.833333333333%;
   font-family: "Crimson Text";
+  overflow: hidden;
 }
 
-.navigation__hamburger {
-  display: none;
-  /* TODO */
+@media (min-width: 740px) {
+  .navigation__hamburger {
+    display: none;
+  }
 }
 
 .navigation__list {
@@ -680,6 +725,14 @@ head:hover ~ body .wrapper:before {
   display: block;
   color: #FAFD4A;
   text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 740px) {
+  .navigation__item {
+    width: auto;
+  }
 }
 
 .navigation__item a {
@@ -717,15 +770,26 @@ head:hover ~ body .wrapper:before {
 }
 
 .content {
-  width: 48.3333333333%;
+  width: 98.3333333333%;
   float: left;
   margin-left: 0.833333333333%;
   margin-right: 0.833333333333%;
-  margin-left: 9.16666666667%;
+  padding-left: 8.33333333333%;
+  padding-right: 8.33333333333%;
   margin-top: 0;
-  padding: 0;
   list-style: none;
   font-weight: normal;
+}
+
+@media (min-width: 740px) {
+  .content {
+    width: 48.3333333333%;
+    float: left;
+    margin-left: 0.833333333333%;
+    margin-right: 0.833333333333%;
+    margin-left: 9.16666666667%;
+    padding: 0;
+  }
 }
 
 .content--full {
@@ -735,8 +799,10 @@ head:hover ~ body .wrapper:before {
   margin: 0;
 }
 
-.content--right {
-  margin-left: 34.1666666667%;
+@media (min-width: 740px) {
+  .content--right {
+    margin-left: 34.1666666667%;
+  }
 }
 
 .content--contiguous-bottom {
@@ -756,22 +822,35 @@ head:hover ~ body .wrapper:before {
 }
 
 .sidebar {
-  width: 31.6666666667%;
+  width: 81.6666666667%;
   float: left;
   margin-left: 0.833333333333%;
   margin-right: 0.833333333333%;
   margin-left: 9.16666666667%;
+  margin-bottom: 6.66666666667%;
   padding: 0 0.833333333333% 0.833333333333%;
   margin-top: 0;
-  margin-bottom: 0.833333333333%;
   background: #ffffdd;
   font-weight: normal;
   text-align: center;
 }
 
-.sidebar--left {
-  margin-left: 0.833333333333%;
-  margin-left: -82.5%;
+@media (min-width: 740px) {
+  .sidebar {
+    width: 31.6666666667%;
+    float: left;
+    margin-left: 0.833333333333%;
+    margin-right: 0.833333333333%;
+    margin-left: 9.16666666667%;
+    margin-bottom: 0.833333333333%;
+  }
+}
+
+@media (min-width: 740px) {
+  .sidebar--left {
+    margin-left: 0.833333333333%;
+    margin-left: -82.5%;
+  }
 }
 
 .sidebar__widget {
@@ -839,11 +918,11 @@ head:hover ~ body .wrapper:before {
 }
 
 .person {
+  width: 100%;
+  float: left;
   display: block;
   list-style: none;
   padding: 0;
-  width: 100%;
-  float: left;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -855,8 +934,27 @@ head:hover ~ body .wrapper:before {
   position: relative;
   margin: 0;
   padding: 0;
-  width: 25%;
-  padding-bottom: 25%;
+  width: 50%;
+  padding-bottom: 50%;
+}
+
+@media (min-width: 740px) {
+  .person {
+    display: block;
+    list-style: none;
+    padding: 0;
+  }
+
+  .person li,
+  .person .block-grid__item {
+    display: block;
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    padding-bottom: 25%;
+  }
 }
 
 .person--small {
@@ -872,8 +970,27 @@ head:hover ~ body .wrapper:before {
   position: relative;
   margin: 0;
   padding: 0;
-  width: 16.6666666667%;
-  padding-bottom: 16.6666666667%;
+  width: 33.3333333333%;
+  padding-bottom: 33.3333333333%;
+}
+
+@media (min-width: 740px) {
+  .person--small {
+    display: block;
+    list-style: none;
+    padding: 0;
+  }
+
+  .person--small li,
+  .person--small .block-grid__item {
+    display: block;
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 16.6666666667%;
+    padding-bottom: 16.6666666667%;
+  }
 }
 
 .person__item {
@@ -950,12 +1067,18 @@ head:hover ~ body .wrapper:before {
 
 .song-list--item {
   /* http://stackoverflow.com/questions/7947886/css-float-clear-a-row-of-floating-elements */
-  width: 48.3333333333%;
+  width: 98.3333333333%;
   display: inline-block;
   vertical-align: top;
   padding: 0 6.66666666667%;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+@media (min-width: 740px) {
+  .song-list--item {
+    width: 48.3333333333%;
+  }
 }
 
 .song-list--item:nth-child(2n) {
@@ -964,10 +1087,8 @@ head:hover ~ body .wrapper:before {
 }
 
 .spotlight {
-  width: 98.3333333333%;
+  width: 100%;
   float: left;
-  margin-left: 0.833333333333%;
-  margin-right: 0.833333333333%;
   margin-bottom: 0.833333333333%;
   text-align: center;
   text-decoration: inherit;
@@ -1002,9 +1123,21 @@ head:hover ~ body .wrapper:before {
   margin-right: 0.833333333333%;
 }
 
+.spotlight--article .spotlight__content {
+  margin-top: 15%;
+  margin-bottom: 6.66666666667%;
+  width: 48.3333333333%;
+  float: left;
+  margin-left: 0.833333333333%;
+  margin-right: 0.833333333333%;
+  margin-left: 9.16666666667%;
+}
+
 .spotlight__content {
   width: 48.3333333333%;
-  margin: 15rem auto 0;
+  margin-top: 31.6666666667%;
+  margin-bottom: 6.66666666667%;
+  margin-left: 9.16666666667%;
   padding: 2rem;
   background: black;
 }

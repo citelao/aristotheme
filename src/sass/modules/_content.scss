@@ -1,10 +1,14 @@
 .content {
-	@include span(6);
-	@include push(1);
+	@include span(full);
+	@include prefix(1);
+	@include suffix(1);
 
-	// padding: gutter() gutter();
+	@include breakpoint($md) {
+		@include span(6);
+		@include push(1);
+		padding: 0;
+	}
 	margin-top: 0;
-	padding: 0;
 
 	list-style: none;
 	font-weight: normal;
@@ -28,7 +32,9 @@
 	}
 
 	.content--right {
-		@include push(4);
+		@include breakpoint($md) {
+			@include push(4);
+		}
 	}
 
 	.content--contiguous-bottom {
