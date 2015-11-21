@@ -15,8 +15,7 @@
     <meta name="twitter:title" content="The Washington University Aristocats">
     <meta name="twitter:description" content="The Washington University Aristocats wreak havoc and sing Disney music at Washington University in St. Louis. Listen to our music &amp; join us!">
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:800,700,400|Crimson+Text:400,400italic,700' rel='stylesheet' type='text/css'>
-
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400|Crimson+Text:400,400italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 
     <?php wp_head(); ?>

@@ -28,7 +28,7 @@ function bs_legible_join($array) {
 // Scripts
 function bs_register_scripts() {
     // wp_enqueue_script('textfit', get_template_directory_uri() . '/bower_components/');
-    wp_enqueue_script('textfit', get_template_directory_uri() . '/js/main.js', array(), false, true);
+    wp_enqueue_script('acatsscript', get_template_directory_uri() . '/js/main.js', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'bs_register_scripts');
 
@@ -36,8 +36,17 @@ add_action('wp_enqueue_scripts', 'bs_register_scripts');
 function bs_register_menus() {
   register_nav_menu('main-nav', 'Main Navigation');
   register_nav_menu('home-nav', 'Home Navigation');
+  register_nav_menu('social-nav', 'Social Navigation');
 }
 add_action('init', 'bs_register_menus');
+
+// Add some BEM classes to the nav menus
+function bs_add_new_classes($classes, $item){
+    $classes[] = 'navigation__item';
+    return $classes;
+}
+add_filter('nav_menu_css_class' , 'bs_add_new_classes' , 10 , 2);
+
 
 // Add a sidebar
 add_action('widgets_init', 'bs_register_sidebars');
@@ -92,13 +101,6 @@ function bs_register_posts() {
     ));
 }
 add_action( 'init', 'bs_register_posts' );
-
-// Add some BEM classes to the nav
-function bs_add_new_classes($classes, $item){
-    $classes[] = 'navigation__item';
-    return $classes;
-}
-add_filter('nav_menu_css_class' , 'bs_add_new_classes' , 10 , 2);
 
 // Add a default title
 function baw_hack_wp_title_for_home($title) {
@@ -274,11 +276,19 @@ function bs_mce_buttons( $buttons ) {
         // 'wp_adv'
     );
 }
-// function bs_mce_buttons_2( $buttons ) { 
-//     print_r($buttons);
-//     return array(
-//         // 'image',
-//     );
-// }
 add_filter('mce_buttons', 'bs_mce_buttons');
-// add_filter('mce_buttons_2', 'bs_mce_buttons_2');
+
+// Sitemaps!
+// https://gist.github.com/lgladdy/10586308
+function show_sitemap() {
+  if (isset($_GET['show_sitemap'])) {
+    $the_query = new WP_Query(array('post_type' => 'any', 'posts_per_page' => '-1', 'post_status' => 'publish'));
+    $urls = array();
+    while ($the_query->have_posts()) {
+      $the_query->the_post();
+      $urls[] = get_permalink();
+    }
+    die(json_encode($urls));
+  }
+}
+add_action('template_redirect','show_sitemap');

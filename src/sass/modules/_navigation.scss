@@ -20,6 +20,35 @@
 		}
 	}
 
+	.navigation--footer {
+		position: static;
+		text-align: center;
+
+		.navigation__list {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.navigation__item {
+			color: $text-white;
+			float: none;
+			display: inline-block;
+
+			a {
+				padding: 1rem;
+				opacity: 0.5;
+			}
+
+			a:focus,
+			a:hover {
+				transform: none;
+				background: 0;
+				color: inherit;
+				opacity: 1;
+			}
+		}
+	}
+
 .navigation__hamburger {
 	background: 0;
 	border: 0;

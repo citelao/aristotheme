@@ -726,6 +726,35 @@ head:hover ~ body .wrapper:before {
   display: block;
 }
 
+.navigation--footer {
+  position: static;
+  text-align: center;
+}
+
+.navigation--footer .navigation__list {
+  display: block;
+  margin: 0 auto;
+}
+
+.navigation--footer .navigation__item {
+  color: white;
+  float: none;
+  display: inline-block;
+}
+
+.navigation--footer .navigation__item a {
+  padding: 1rem;
+  opacity: 0.5;
+}
+
+.navigation--footer .navigation__item a:focus,
+.navigation--footer .navigation__item a:hover {
+  transform: none;
+  background: 0;
+  color: inherit;
+  opacity: 1;
+}
+
 .navigation__hamburger {
   background: 0;
   border: 0;
@@ -1202,19 +1231,6 @@ head:hover ~ body .wrapper:before {
   display: block;
   position: relative;
   text-align: center;
-}
-
-.footer__link {
-  color: white;
-  opacity: 0.5;
-  text-decoration: none;
-}
-
-.footer__link:hover,
-.footer__link:focus {
-  color: white;
-  opacity: 1;
-  text-decoration: none;
 }
 
 .footer__image {

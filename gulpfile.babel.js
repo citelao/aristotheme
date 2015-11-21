@@ -34,7 +34,7 @@ gulp.task('css', () => {
     .pipe(sass({
       'precision': 12
     }))
-    .pipe(importCss())
+  .pipe(importCss())
     .pipe(gulp.dest('./dist'))
     .pipe(notify({
       'onLast': true,
