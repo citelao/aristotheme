@@ -15,7 +15,7 @@
 
 		$meta = get_post_custom($post->object_id);
 
-		// print_r($meta);
+		// print_r($post);
 
 		$title = $post->title;
 		if($meta['bs_alt_title']) {
@@ -41,7 +41,9 @@
 
 		?>
 	
-		<a href="<?php echo $post->url; ?>" class="spotlight" style="<?php echo $style; ?>">
+		<a href="<?php echo $post->url; ?>" 
+			class="spotlight <?php echo join($post->classes, ' '); ?>"
+			style="<?php echo $style; ?>">
 			<div class="spotlight__content">
 				<h2><?php echo $title; ?></h2>
 				<?php 

@@ -732,6 +732,7 @@ head:hover ~ body .wrapper:before {
   width: 100%;
   float: left;
   margin-left: 0.833333333333%;
+  margin: 0;
 }
 
 .content--right {
@@ -967,7 +968,7 @@ head:hover ~ body .wrapper:before {
   float: left;
   margin-left: 0.833333333333%;
   margin-right: 0.833333333333%;
-  margin: 0 0 0.833333333333% 0;
+  margin-bottom: 0.833333333333%;
   text-align: center;
   text-decoration: inherit;
   font-weight: 300;
@@ -989,6 +990,18 @@ head:hover ~ body .wrapper:before {
   transition-duration: 0s;
 }
 
+.spotlight--subtle:hover,
+.spotlight--subtle:focus {
+  color: #FAFD4A;
+}
+
+.spotlight--half {
+  width: 48.3333333333%;
+  float: left;
+  margin-left: 0.833333333333%;
+  margin-right: 0.833333333333%;
+}
+
 .spotlight__content {
   width: 48.3333333333%;
   margin: 15rem auto 0;
@@ -1004,11 +1017,6 @@ head:hover ~ body .wrapper:before {
 .spotlight__button:hover,
 .spotlight__button:focus {
   transition: all 0s ease-in;
-}
-
-.spotlight--subtle:hover,
-.spotlight--subtle:focus {
-  color: #FAFD4A;
 }
 
 .footer {

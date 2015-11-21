@@ -24,6 +24,7 @@
 	.content--full {
 		@include span(12 nest);
 		@include push(0);
+		margin: 0;
 	}
 
 	.content--right {
