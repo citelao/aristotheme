@@ -112,25 +112,31 @@ add_filter('wp_title', 'baw_hack_wp_title_for_home');
 add_filter('rwmb_meta_boxes', 'bs_register_meta_boxes');
 function bs_register_meta_boxes($meta_boxes){
     $meta_boxes[] = array(
-        'title' => 'Header',
-        'id' => 'bs_header',
+        'title' => 'Homepage',
+        'id' => 'bs_homepage',
         'pages' => array('post', 'page'),
         'context'  => 'normal',
         'priority' => 'high',
         'fields' => array(
+            array(
+                'name' => 'Help',
+                'id' => 'bs_help',
+                'type' => 'custom_html',
+                'std' => '<p>These fields customize how this page/post is displayed on the home page if you have added it to the homepage navigation menu.</p>'
+            ),
             // array(
             //     'name' => 'Header Image',
             //     'id' => 'bs_header_image',
             //     'type' => 'image_advanced',
             //     'desc' => 'Which image to use as the header background.'
             // ),
-            array(
-                'name' => 'Alternate title',
-                'id' => 'bs_alt_title',
-                'type' => 'text',
-                'size' => 60,
-                'desc' => 'An alternate title to display when the page is viewed.'
-            ),
+            // array(
+            //     'name' => 'Alternate title',
+            //     'id' => 'bs_alt_title',
+            //     'type' => 'text',
+            //     'size' => 60,
+            //     'desc' => 'An alternate title to display when the page is viewed.'
+            // ),
             array(
                 'name' => 'Homepage Image',
                 'id' => 'bs_featured_image',
@@ -149,7 +155,7 @@ function bs_register_meta_boxes($meta_boxes){
                 'id' => 'bs_featured_summary',
                 'type' => 'wysiwyg',
                 'size' => 60,
-                'desc' => 'The blurb to display if this is featured on the homepage.'
+                'desc' => 'The blurb to display if this is featured on the homepage. Try to keep this short (one or two sentences)'
             )
         )
     );
@@ -160,14 +166,14 @@ function bs_register_meta_boxes($meta_boxes){
         'context'  => 'normal',
         'priority' => 'high',
         'fields' => array(
-            array(
-                'name' => 'Last Name',
-                'id' => 'bs_member_lastname',
-                'type' => 'text',
-                'size' => 60,
-                'std' => '',
-                'desc' => 'Member\'s last name (for sorting)'
-            ),
+            // array(
+            //     'name' => 'Last Name',
+            //     'id' => 'bs_member_lastname',
+            //     'type' => 'text',
+            //     'size' => 60,
+            //     'std' => '',
+            //     'desc' => 'Member\'s last name (for sorting)'
+            // ),
             array(
                 'name' => 'Image',
                 'id' => 'bs_member_image',
@@ -198,7 +204,7 @@ function bs_register_meta_boxes($meta_boxes){
         'priority' => 'high',
         'fields' => array(
             array(
-                'name' => 'Original',
+                'name' => 'Original Writer',
                 'id' => 'bs_original',
                 'type' => 'text',
                 'size' => 60,
@@ -218,7 +224,7 @@ function bs_register_meta_boxes($meta_boxes){
                 'id' => 'bs_soloist',
                 'type' => 'text',
                 'size' => 60,
-                'desc' => 'The person who will sing this song. Leave blank if there are no soloists.',
+                'desc' => 'The person who will sing this song. Leave blank if there are no soloists. Write "TBD" if currently undetermined.',
                 'clone' => true
             ),
             array(
@@ -238,9 +244,49 @@ function bs_register_meta_boxes($meta_boxes){
                 'name' => 'Featured',
                 'id' => 'bs_song_featured',
                 'type' => 'checkbox',
-                'desc' => 'Is featured? Only the first featured song gets featured.'
+                'desc' => 'Is featured? This displays the song and its video, along with more information about it, on the music page. Only the first featured song gets featured.'
             ),
+            array(
+                'name' => 'Iframe URL',
+                'id' => 'bs_embed_url',
+                'type' => 'text',
+                'size' => 60,
+                'desc' => 'If featured, use this URL for the &lt;iframe> (embedded video).'
+            ),
+            array(
+                'name' => 'Performance location',
+                'id' => 'bs_song_performance_location',
+                'type' => 'text',
+                'size' => 60,
+                'desc' => 'If featured, use this as the venue for the performance ("Bella Notte 2015", eg)'
+            )
         )
     );
     return $meta_boxes;
 }
+
+// Custom editor buttons
+function bs_mce_buttons( $buttons ) { 
+    // print_r($buttons);
+    return array(
+        'bold',
+        'italic',
+        'strikethrough',
+        'bullist',
+        'numlist',
+        'blockquote',
+        'seperator',
+        'link',
+        'unlink',
+        'wp_more',
+        // 'wp_adv'
+    );
+}
+// function bs_mce_buttons_2( $buttons ) { 
+//     print_r($buttons);
+//     return array(
+//         // 'image',
+//     );
+// }
+add_filter('mce_buttons', 'bs_mce_buttons');
+// add_filter('mce_buttons_2', 'bs_mce_buttons_2');

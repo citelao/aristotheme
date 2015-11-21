@@ -15,16 +15,43 @@
 	<?php dynamic_sidebar('bs-sidebar'); ?>
 </ul> -->
 
-<section class="content content--contiguous-bottom content--contiguous-top content--right">
-	<iframe width="780" height="406.6875" src="https://www.youtube.com/embed/F4ICMxmSLBc" frameborder="0" allowfullscreen="" data-aspect="1.7777777777777777"></iframe>
-</section>
-<ul class="sidebar sidebar--left">
-	<h2>(title)</h2>
-	<p>(description)</p>
-	<p>
-		<a href="https://youtube.com/user/thearistocatswashu/" class="button">Watch more on YouTube&nbsp;&rarr;</a>
-	</p>
-</ul>
+<?php 
+	$feat = wp_get_recent_posts(array(
+		'numberposts' => 1,
+		'post_type' => 'song',
+		'meta_key' => 'bs_song_featured'
+		))[0];
+	
+	if($feat): ?>
+
+	<?php $url = get_post_meta($feat['ID'], 'bs_embed_url', true); ?>
+	<section class="content content--contiguous-bottom content--contiguous-top content--right">
+		<iframe width="780" height="406.6875" src="<?php echo $url; ?>" frameborder="0" allowfullscreen="" data-aspect="1.7777777777777777"></iframe>
+	</section>
+	<ul class="sidebar sidebar--left">
+			<h2><?php echo $feat['post_title']; ?></h2>
+			<?php 
+			$arrangers = get_post_meta($feat['ID'], 'bs_arranger', true);
+			$arranger_string = bs_legible_join($arrangers, ", ");
+
+			$performance = get_post_meta($feat['ID'], 'bs_song_performance_location', true);
+			?>
+			<p>
+				Watch our performance of <?php echo $arranger_string; ?>&rsquo;s arrangement of
+				<strong><?php echo $feat['post_title']; ?></strong> from <?php echo $performance; ?>.
+			</p>
+			<?php 
+			$soloists = get_post_meta($feat['ID'], 'bs_soloist', true);
+			$soloist_string = bs_legible_join($soloists, ", ");
+			?>
+			<p>
+				<strong>Soloist(s):</strong>  <?php echo $soloist_string; ?>
+			</p>
+			<p>
+				<a href="https://youtube.com/user/thearistocatswashu/" class="button">Watch more on YouTube&nbsp;&rarr;</a>
+			</p>
+	</ul>
+<?php endif;?>
 <section class="content content--contiguous-top">
 	<h2>Current Songs</h2>
 </section>
