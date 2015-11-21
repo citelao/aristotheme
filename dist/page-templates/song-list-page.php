@@ -16,36 +16,38 @@
 </ul> -->
 
 <?php 
-	$feat = wp_get_recent_posts(array(
-		'numberposts' => 1,
-		'post_type' => 'song',
-		'meta_key' => 'bs_song_featured'
-		))[0];
-	
-	if($feat): ?>
+$id = get_queried_object()->ID;
+$featid = get_post_meta($id, 'bs_featured_song', true);
 
-	<?php $url = get_post_meta($feat['ID'], 'bs_embed_url', true); ?>
+if($featid): 
+	$song = get_post($featid);
+	$url = get_post_meta($id, 'bs_featured_song_embed', true);
+	$embed = wp_oembed_get($url, array('width' => '780', 'data-aspect' => '1.7777777777777777'));
+
+	$title = $song->post_title;
+	$arrangers = get_post_meta($song->ID, 'bs_arranger', true);
+	$arranger_string = bs_legible_join($arrangers, ", ");
+	$soloists = get_post_meta($song->ID, 'bs_soloist', true);
+	$soloist_string = bs_legible_join($soloists, ", ");
+
+	$venue = get_post_meta($id, 'bs_featured_song_venue', true);
+	?>
+
 	<section class="content content--contiguous-bottom content--contiguous-top content--right">
-		<iframe width="780" height="406.6875" src="<?php echo $url; ?>" frameborder="0" allowfullscreen="" data-aspect="1.7777777777777777"></iframe>
+		<?php echo $embed; ?>
 	</section>
 	<ul class="sidebar sidebar--left">
-			<h2><?php echo $feat['post_title']; ?></h2>
-			<?php 
-			$arrangers = get_post_meta($feat['ID'], 'bs_arranger', true);
-			$arranger_string = bs_legible_join($arrangers, ", ");
-
-			$performance = get_post_meta($feat['ID'], 'bs_song_performance_location', true);
-			?>
+			<h2><?php echo $title; ?></h2>
 			<p>
-				Watch our performance of <?php echo $arranger_string; ?>&rsquo;s arrangement of
-				<strong><?php echo $feat['post_title']; ?></strong> from <?php echo $performance; ?>.
+				Watch our performance of 
+				<?php echo $arranger_string; ?>&rsquo;s
+				arrangement of
+				<strong><?php echo $feat['post_title']; ?></strong>
+				from <?php echo $venue; ?>.
 			</p>
-			<?php 
-			$soloists = get_post_meta($feat['ID'], 'bs_soloist', true);
-			$soloist_string = bs_legible_join($soloists, ", ");
-			?>
 			<p>
-				<strong>Soloist(s):</strong>  <?php echo $soloist_string; ?>
+				<strong>Soloist(s):</strong>
+				<?php echo $soloist_string; ?>
 			</p>
 			<p>
 				<a href="https://youtube.com/user/thearistocatswashu/" class="button">Watch more on YouTube&nbsp;&rarr;</a>

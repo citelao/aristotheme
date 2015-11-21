@@ -113,7 +113,6 @@ add_filter('rwmb_meta_boxes', 'bs_register_meta_boxes');
 function bs_register_meta_boxes($meta_boxes){
     $meta_boxes[] = array(
         'title' => 'Homepage',
-        'id' => 'bs_homepage',
         'pages' => array('post', 'page'),
         'context'  => 'normal',
         'priority' => 'high',
@@ -124,19 +123,6 @@ function bs_register_meta_boxes($meta_boxes){
                 'type' => 'custom_html',
                 'std' => '<p>These fields customize how this page/post is displayed on the home page if you have added it to the homepage navigation menu.</p>'
             ),
-            // array(
-            //     'name' => 'Header Image',
-            //     'id' => 'bs_header_image',
-            //     'type' => 'image_advanced',
-            //     'desc' => 'Which image to use as the header background.'
-            // ),
-            // array(
-            //     'name' => 'Alternate title',
-            //     'id' => 'bs_alt_title',
-            //     'type' => 'text',
-            //     'size' => 60,
-            //     'desc' => 'An alternate title to display when the page is viewed.'
-            // ),
             array(
                 'name' => 'Homepage Image',
                 'id' => 'bs_featured_image',
@@ -160,20 +146,45 @@ function bs_register_meta_boxes($meta_boxes){
         )
     );
     $meta_boxes[] = array(
+        'title' => 'Templates',
+        'pages' => array('page'),
+        'context'  => 'normal',
+        'priority' => 'high',
+        'fields' => array(
+            array(
+                'name' => 'Help',
+                'id' => 'bs_help',
+                'type' => 'custom_html',
+                'std' => '<p>These fields are targetted at specific page templates, so that you can add dynamic content to other fields not traditionally present on a page.</p><p>So make sure that the fields you fill out correspond to the correct <strong>Template</strong>, under <strong>Page Attributes</strong>, on the right.'
+            ),
+            array(
+                'name' => 'Song-list Page: Featured Song',
+                'id' => 'bs_featured_song',
+                'type' => 'post',
+                'post_type' => 'song',
+                'desc' => 'Which song to feature with a video and blurb'
+            ),
+            array(
+                'name' => 'Song-list Page: Featured Song URL',
+                'id' => 'bs_featured_song_embed',
+                'type' => 'oembed',
+                'desc' => 'The embed URL for the featured song.'
+            ),
+            array(
+                'name' => 'Song-list Page: Featured Song Venue',
+                'id' => 'bs_featured_song_venue',
+                'type' => 'text',
+                'desc' => 'The name of the venue where we performed (e.g. "Bella Notte 2015")'
+            )
+        )
+    );
+    $meta_boxes[] = array(
         'title' => 'Info',
         'id' => 'bs_info',
         'pages' => array('member'),
         'context'  => 'normal',
         'priority' => 'high',
         'fields' => array(
-            // array(
-            //     'name' => 'Last Name',
-            //     'id' => 'bs_member_lastname',
-            //     'type' => 'text',
-            //     'size' => 60,
-            //     'std' => '',
-            //     'desc' => 'Member\'s last name (for sorting)'
-            // ),
             array(
                 'name' => 'Image',
                 'id' => 'bs_member_image',
@@ -239,26 +250,6 @@ function bs_register_meta_boxes($meta_boxes){
                 'id' => 'bs_song_status',
                 'type' => 'checkbox',
                 'desc' => 'Is retired?'
-            ),
-            array(
-                'name' => 'Featured',
-                'id' => 'bs_song_featured',
-                'type' => 'checkbox',
-                'desc' => 'Is featured? This displays the song and its video, along with more information about it, on the music page. Only the first featured song gets featured.'
-            ),
-            array(
-                'name' => 'Iframe URL',
-                'id' => 'bs_embed_url',
-                'type' => 'text',
-                'size' => 60,
-                'desc' => 'If featured, use this URL for the &lt;iframe> (embedded video).'
-            ),
-            array(
-                'name' => 'Performance location',
-                'id' => 'bs_song_performance_location',
-                'type' => 'text',
-                'size' => 60,
-                'desc' => 'If featured, use this as the venue for the performance ("Bella Notte 2015", eg)'
             )
         )
     );
