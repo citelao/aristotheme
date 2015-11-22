@@ -1229,20 +1229,56 @@ head:hover ~ body .wrapper:before {
 
 .spotlight--article {
   text-align: left;
+  padding-top: 6.66666666667%;
+  padding-bottom: 6.66666666667%;
+  color: #333;
 }
 
 .spotlight--article .spotlight__content {
+  background: #fff;
   padding-top: 6.66666666667%;
   padding-bottom: 6.66666666667%;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
-  width: 33.3333333333%;
+  width: 40%;
   float: left;
+  margin-left: 0.833333333333%;
+  margin-right: 0.833333333333%;
+  padding-left: 8.33333333333%;
+  padding-right: 8.33333333333%;
+  transition: all 0.2s ease-in;
+}
+
+.spotlight--article .spotlight__content:hover,
+.spotlight--article .spotlight__content:focus {
+  transition: all 0s ease-in;
+}
+
+.spotlight--article:hover,
+.spotlight--article:focus {
+  color: #333;
+}
+
+.spotlight--article:hover .spotlight__content,
+.spotlight--article:focus .spotlight__content {
+  transform: scale(1.1);
+  transition-duration: 0s;
+}
+
+.spotlight--article:hover.spotlight--subtle .spotlight__content,
+.spotlight--article:focus.spotlight--subtle .spotlight__content {
+  transform: none;
+}
+
+.spotlight--article:hover.spotlight--subtle .spotlight__button,
+.spotlight--article:focus.spotlight--subtle .spotlight__button {
+  transform: scale(1.1);
+  transition-duration: 0s;
 }
 
 .spotlight--article--flipped .spotlight__content {
-  margin-left: 67.5%;
+  margin-left: 59.1666666667%;
 }
 
 .spotlight__content {

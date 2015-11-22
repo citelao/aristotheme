@@ -65,20 +65,48 @@
 
 	.spotlight--article {
 		text-align: left;
+		padding-top: span(1);
+		padding-bottom: span(1);
+		color: $text;
+
 		.spotlight__content {
+			background: $background-light;
 			padding-top: span(1);
 			padding-bottom: span(1);
 			margin-top: 0;
 			margin-bottom: 0;
 			margin-left: 0;
 		
-			@include span(4 nest);
+			@include span(5);
+			@include prefix(1 nest);
+			@include suffix(1);
+			@include punchy;
+		}
+
+		&:hover, &:focus {
+			color: $text;
+
+			.spotlight__content {
+				transform: scale(1.1);
+				transition-duration: 0s;
+			}
+
+			&.spotlight--subtle {
+				.spotlight__content {
+					transform: none;
+				}
+
+				.spotlight__button {
+					transform: scale(1.1);
+					transition-duration: 0s;
+				}
+			}
 		}
 	}
 
 		.spotlight--article--flipped {
 			.spotlight__content {
-				@include push(8);
+				@include push(7 nest);
 			}
 		}
 
