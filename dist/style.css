@@ -835,6 +835,10 @@ head:hover ~ body .wrapper:before {
   color: #333;
 }
 
+.main--bleed {
+  padding-top: 0;
+}
+
 .content {
   width: 98.3333333333%;
   float: left;
@@ -863,6 +867,7 @@ head:hover ~ body .wrapper:before {
   float: left;
   margin-left: 0.833333333333%;
   margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 740px) {
@@ -1176,7 +1181,6 @@ head:hover ~ body .wrapper:before {
 .spotlight {
   width: 100%;
   float: left;
-  margin-bottom: 0.833333333333%;
   text-align: center;
   text-decoration: inherit;
   font-weight: 300;
@@ -1203,28 +1207,49 @@ head:hover ~ body .wrapper:before {
   color: #FAFD4A;
 }
 
-.spotlight--half {
-  width: 48.3333333333%;
-  float: left;
-  margin-left: 0.833333333333%;
-  margin-right: 0.833333333333%;
+@media (min-width: 740px) {
+  .spotlight--half {
+    width: 50%;
+    float: left;
+    padding-bottom: 50%;
+    float: left;
+    position: relative;
+  }
+
+  .spotlight--half .spotlight__content {
+    position: absolute;
+    width: 63.3333333333%;
+    float: left;
+    margin-left: 1.66666666667%;
+    margin-right: 1.66666666667%;
+    margin-left: 18.3333333333%;
+    bottom: 10%;
+  }
+}
+
+.spotlight--article {
+  text-align: left;
 }
 
 .spotlight--article .spotlight__content {
-  margin-top: 15%;
-  margin-bottom: 6.66666666667%;
-  width: 48.3333333333%;
+  padding-top: 6.66666666667%;
+  padding-bottom: 6.66666666667%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  width: 33.3333333333%;
   float: left;
-  margin-left: 0.833333333333%;
-  margin-right: 0.833333333333%;
-  margin-left: 9.16666666667%;
+}
+
+.spotlight--article--flipped .spotlight__content {
+  margin-left: 67.5%;
 }
 
 .spotlight__content {
   width: 48.3333333333%;
   margin-top: 31.6666666667%;
   margin-bottom: 6.66666666667%;
-  margin-left: 9.16666666667%;
+  margin-left: 25.8333333333%;
   padding: 2rem;
   background: black;
 }

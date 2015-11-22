@@ -77,4 +77,8 @@
 		)); ?>
 	</nav>
 
-    <section class="main" id="content">
+    <?php if(is_front_page()): ?>
+        <section class="main main--bleed" id="content">
+    <?php else: ?>
+        <section class="main" id="content">
+    <?php endif; ?>

@@ -263,6 +263,7 @@ function bs_register_meta_boxes($meta_boxes){
 function bs_mce_buttons( $buttons ) { 
     // print_r($buttons);
     return array(
+        'styleselect',
         'bold',
         'italic',
         'strikethrough',
@@ -273,10 +274,82 @@ function bs_mce_buttons( $buttons ) {
         'link',
         'unlink',
         'wp_more',
+        'fullscreen'
         // 'wp_adv'
     );
 }
 add_filter('mce_buttons', 'bs_mce_buttons');
+
+// Custom editor styles
+function bs_mce_before_init($settings) {
+    $style_formats = array(
+        array(
+            'title' => 'Post Headers',
+            'items' => array(
+                array(
+                    'title' => 'Post Heading',
+                    'format' => 'h3'
+                ),
+                array(
+                    'title' => 'Post Subheading',
+                    'format' => 'h4'
+                )
+            )
+        ),
+        array(
+            'title' => 'Page Headers',
+            'items' => array(
+                array(
+                    'title' => 'Page Heading',
+                    'format' => 'h2'
+                ),
+                array(
+                    'title' => 'Page Subheading',
+                    'format' => 'h3'
+                )
+            )
+        ),
+        array(
+            'title' => 'Inline',
+            'items' => array(
+                array(
+                    'title' => 'Superscript',
+                    'inline' => 'sup',
+                    'icon' => 'superscript'
+                ),
+                array(
+                    'title' => 'Subscript',
+                    'inline' => 'sub',
+                    'icon' => 'subscript'
+                )
+            )
+        )
+
+    );
+    //     array(
+    //         'title' => 'Button',
+    //         'selector' => 'a',
+    //         'classes' => 'button'
+    //     ),
+    //     array(
+    //         'title' => 'Callout Box',
+    //         'block' => 'div',
+    //         'classes' => 'callout',
+    //         'wrapper' => true
+    //     ),
+    //     array(
+    //         'title' => 'Bold Red Text',
+    //         'inline' => 'span',
+    //         'styles' => array(
+    //             'color' => '#f00',
+    //             'fontWeight' => 'bold'
+    //         )
+    //     )
+    // );
+    $settings['style_formats'] = json_encode( $style_formats );
+    return $settings;
+}
+add_filter('tiny_mce_before_init', 'bs_mce_before_init');
 
 // Sitemaps!
 // https://gist.github.com/lgladdy/10586308

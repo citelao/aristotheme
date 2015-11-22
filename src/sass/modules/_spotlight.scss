@@ -1,6 +1,5 @@
 .spotlight {
 	@include span(12 nest);
-	margin-bottom: gutter();
 
 	text-align: center;
 	text-decoration: inherit;
@@ -29,28 +28,66 @@
 	}
 
 	.spotlight--half {
-		@include span(6);
-	}
+		@include breakpoint($md) {
+			@include span(6 nest);
+			padding-bottom: 50%;
+			float: left;
+			position: relative;
 
-	.spotlight--article {
-		.spotlight__content {
-			// margin-left: 0;
-			margin-top: span(2);
-			margin-bottom: span(1);
-			// padding-left: span(1) + 2*gutter();
-			// padding-right: span(1) + 2*gutter();
-
-			@include span(6);
-			@include push(1);
+			.spotlight__content {
+				position: absolute;
+				@include span(4 of 6);
+				@include push(1 of 6);
+				bottom: 10%;
+			}
 		}
 	}
+
+	// .spotlight--third {
+	// 	@include breakpoint($md) {
+	// 		@include span(4 nest);
+	// 		padding-bottom: (100%/3);
+	// 		float: left;
+	// 		position: relative;
+
+	// 		.spotlight__content {
+	// 			position: absolute;
+	// 			top: 0;
+	// 			left: 0;
+	// 			width: 100%;
+	// 			height: 100%;
+
+	// 			margin: 0;
+	// 			padding: 2rem;
+	// 		}
+	// 	}
+	// }
+
+	.spotlight--article {
+		text-align: left;
+		.spotlight__content {
+			padding-top: span(1);
+			padding-bottom: span(1);
+			margin-top: 0;
+			margin-bottom: 0;
+			margin-left: 0;
+		
+			@include span(4 nest);
+		}
+	}
+
+		.spotlight--article--flipped {
+			.spotlight__content {
+				@include push(8);
+			}
+		}
 
 .spotlight__content {
 	width: span(6 nest);
 	// margin: 15rem auto 0;
 	margin-top: span(4);
 	margin-bottom: span(1);
-	@include push(1);
+	@include push(3);
 	padding: 2rem;
 
 	background: black;
