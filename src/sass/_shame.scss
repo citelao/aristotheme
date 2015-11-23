@@ -22,3 +22,23 @@
 	height: 60px;
 	margin: 0 0 1rem 0;
 }
+
+/* fix post list issue */
+.post, .sidebar__widget {
+	& > ul li {
+		list-style-type: disc;
+
+		& > ul li {
+			list-style-type: circle;
+
+			& > ul li {
+				list-style-type: square;
+			}
+		}
+	}
+}
+
+/* because fix ugliness */
+.sidebar__widget ul {
+	text-align: left;
+}

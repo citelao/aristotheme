@@ -1337,3 +1337,26 @@ head:hover ~ body .wrapper:before {
   height: 60px;
   margin: 0 0 1rem 0;
 }
+
+/* fix post list issue */
+
+.post > ul li,
+.sidebar__widget > ul li {
+  list-style-type: disc;
+}
+
+.post > ul li > ul li,
+.sidebar__widget > ul li > ul li {
+  list-style-type: circle;
+}
+
+.post > ul li > ul li > ul li,
+.sidebar__widget > ul li > ul li > ul li {
+  list-style-type: square;
+}
+
+/* because fix ugliness */
+
+.sidebar__widget ul {
+  text-align: left;
+}
