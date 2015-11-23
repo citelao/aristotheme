@@ -60,6 +60,7 @@ if($featid):
 	<ul class="song-list">
 	<?php query_posts(array(
 			'post_type' => 'song',
+			'posts_per_page' => -1,
 			'orderby' => array('title' => 'ASC')
 		));
 

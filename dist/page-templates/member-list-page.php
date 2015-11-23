@@ -21,6 +21,7 @@
 	<?php query_posts(array(
 			'post_type' => 'member',
 			'meta_key' => 'bs_member_role',
+			'posts_per_page' => -1,
 			// 'meta_query' => array(
 			// 	array(
 			// 		'key' => 'bs_member_role',

@@ -564,51 +564,6 @@ em {
   clear: both;
 }
 
-head {
-  display: block;
-  position: fixed;
-  right: 10px;
-  top: 10px;
-  z-index: 999;
-  color: #333;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-head:before {
-  content: "|||";
-  display: block;
-  padding: 5px 10px;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-head:hover {
-  background: rgba(255, 255, 255, 0.5);
-  color: red;
-}
-
-head:hover ~ .wrapper,
-head:hover ~ body .wrapper {
-  position: relative;
-}
-
-head:hover ~ .wrapper:before,
-head:hover ~ body .wrapper:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  content: " ";
-  z-index: 998;
-  background-image: linear-gradient(to right, transparent 10%, rgba(255, 0, 0, 0.5) 10%, rgba(255, 77, 77, 0.5) 90%, transparent 90%);
-  background-size: 8.33333333333%;
-  background-origin: content-box;
-  background-clip: content-box;
-  background-position: left top;
-}
-
 .header {
   width: 100%;
   float: left;

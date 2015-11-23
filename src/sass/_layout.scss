@@ -4,13 +4,14 @@ $susy: (
 	container: 1200px,
 	global-box-sizing: border-box,
 	gutter-position: split,
-	debug: (
-	    image: show,
-	    color: rgba(red, 0.5),
-	    output: overlay,
-	    toggle: top right
-	)
 );
+
+	// debug: (
+	//     image: show,
+	//     color: rgba(red, 0.5),
+	//     output: overlay,
+	//     toggle: top right
+	// )
 
 .wrapper {
 	@include container;
