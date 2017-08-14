@@ -6,6 +6,10 @@ add_theme_support('automatic-feed-links');
 add_theme_support('html5');
 add_theme_support('title-tag');
 
+// Add smarter image sizes
+add_image_size( 'member_thumbnail', 600, 600, true );
+add_image_size( 'alumni_thumbnail', 350, 350, true );
+
 function bs_legible_join($array) {
     if(!is_array($array)) {
         return "";

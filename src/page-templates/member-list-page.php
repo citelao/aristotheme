@@ -37,7 +37,7 @@
 		if($is_alum) { continue; } 
 
 		$attachment = get_post_meta(get_the_ID(), 'bs_member_image', true);
-		$img = wp_get_attachment_image_src($attachment, 'full');
+		$img = wp_get_attachment_image_src($attachment, 'member_thumbnail');
 		$style = "";
 		if($img) {
 			$style = $style = 'background-image: url(' . $img[0] . ')';
@@ -75,7 +75,7 @@
 		if(!$is_alum) { continue; } 
 
 		$attachment = get_post_meta(get_the_ID(), 'bs_member_image', true);
-		$img = wp_get_attachment_image_src($attachment, 'full');
+		$img = wp_get_attachment_image_src($attachment, 'alumni_thumbnail');
 		$style = "";
 		if($img) {
 			$style = $style = 'background-image: url(' . $img[0] . ')';

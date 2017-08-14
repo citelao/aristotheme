@@ -567,7 +567,7 @@ em {
 .header {
   width: 100%;
   float: left;
-  background-image: url("img/header/bg.png");
+  background-image: url(img/header/bg.png);
   background-size: 300px 300px;
   padding: 2rem 0;
   text-align: center;
@@ -941,7 +941,7 @@ em {
 
 .definition-table__term,
 .definition-table__def {
-  padding: 0 0.5rem;
+  padding: 0 .5rem;
   vertical-align: top;
 }
 
@@ -1042,11 +1042,11 @@ em {
 
 .person__item {
   background-size: cover;
-  background-image: url("img/members/generic.jpg");
+  background-image: url(img/members/generic.jpg);
 }
 
 .person__item--link {
-  background-image: url("img/members/you.png");
+  background-image: url(img/members/you.png);
   transition: all 0.2s ease-in;
 }
 
@@ -1140,7 +1140,7 @@ em {
   text-decoration: inherit;
   font-weight: 300;
   color: #FAFD4A;
-  background-image: url("img/header/bg.png");
+  background-image: url(img/header/bg.png);
   background-size: cover;
   background-position: center center;
 }
