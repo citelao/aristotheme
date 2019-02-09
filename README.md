@@ -22,7 +22,22 @@ The theme has three nav menus, 2 are surely necessary, 1 IDK:
 	* Meta Box plugin (metabox.io)
 	* Simple Page Sidebars (wordpress.org/plugins/simple-page-sidebars)
 4. Setup a front page (Admin page > Settings > Reading). Create a Home page and a News page. None of the content from either is used.
-5. Add the navigation menus (Admin page > Appearance > Menus).
+5. Add the navigation menus (Admin page > Appearance > Menus). Make sure you add all three, or you won't be using the theme to the fullest!
+6. Create custom sidebars for each page (Admin page > Appearance > Widgets to create them, the page editor to apply them to specific pages).
+
+    1. Create a sidebar for the page (on the Widgets page).
+    2. Open the page editor for the page you want.
+    3. On the right side of the page, select your sidebar from the dropdown.
+    4. Update the page.
+
+    I like to create a flow, so the "About Us" page suggests going to the "Music" or "Audition" pages, for example. I usually use the simple Text widget and add custom HTML: you can add buttons by using the `button` class (`<a href="/music" class="button">Learn about us →</a>`).
+    
+    I like the blog section to have a blog-style sidebar, with search and some recent posts: 
+    
+    1. Create a "news sidebar"
+    2. Click the `Sidebar Location` button.
+    3. Apply it to be the default sidebar for all posts: check `As Default sidebar for selected Post Types` and make sure it is the default for `Posts`.
+    4. Apply it to be the default sidebar for the blog homepage: in the `For Archives` section, check `As Default sidebar for selected Archive Types` for `Post Index`. If you try to manually set it on the blog page in the page editor, you will see these instructions, too :D.
  
 I used Menu Icons (https://wordpress.org/plugins/menu-icons/) for (you guessed it!) menu icons.
 
