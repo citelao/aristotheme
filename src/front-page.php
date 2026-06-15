@@ -42,7 +42,7 @@
 		?>
 	
 		<a href="<?php echo $post->url; ?>" 
-			class="spotlight <?php echo join($post->classes, ' '); ?>"
+			class="spotlight <?php echo join(' ', $post->classes); ?>"
 			style="<?php echo $style; ?>">
 			<div class="spotlight__content">
 				<h2><?php echo $title; ?></h2>
